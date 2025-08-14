@@ -1,6 +1,36 @@
-*~
+########################################################################
+# Local ignores
+########################################################################
 
+!lib
+
+*~
+*.bak
+
+ARCHIVE
+ignore
+output
+pubspec.yaml.*
+tmp
+
+installers/*.apk
+installers/*.exe
+installers/*.snap
+installers/*.tar.gz
+installers/*-linux.zip
+installers/*-macos.zip
+installers/*-windows.zip
+
+########################################################################
+# From https://github.com/flutter/flutter/blob/master/.gitignore
+# Combined with the github flutter .gitignore
+# Combined with the flutter create .gitignore
+########################################################################
+
+#-----------------------------------------------------------------------
 # Miscellaneous
+#-----------------------------------------------------------------------
+
 *.class
 *.lock
 *.log
@@ -15,16 +45,23 @@
 .swiftpm/
 migrate_working_dir/
 
+#-----------------------------------------------------------------------
 # IntelliJ related
+#-----------------------------------------------------------------------
+
 *.iml
 *.ipr
 *.iws
 .idea/
 
+#-----------------------------------------------------------------------
+# Visual Studio Code related
+#
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
-#.vscode/
+
+.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -47,7 +84,10 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+#-----------------------------------------------------------------------
 # Flutter repo-specific
+#-----------------------------------------------------------------------
+
 /bin/cache/
 /bin/internal/bootstrap.bat
 /bin/internal/bootstrap.sh
@@ -67,9 +107,16 @@ version
 analysis_benchmark.json
 
 # packages file containing multi-root paths
+
 .packages.generated
 
+#-----------------------------------------------------------------------
 # Flutter/Dart/Pub related
+#-----------------------------------------------------------------------
+
+# Directory created by dartdoc. If you don't generate documentation
+# locally you can remove this line.
+
 **/doc/api/
 .dart_tool/
 .flutter-plugins
@@ -84,7 +131,32 @@ linked_*.ds
 unlinked.ds
 unlinked_spec.ds
 
+# If you're building an application, you may want to check-in the
+# pubspec.lock. Libraries should not include pubspec.lock, per 
+# https://dart.dev/guides/libraries/private-files#pubspeclock.
+
+/pubspec.lock
+
+#-----------------------------------------------------------------------
+# Avoid committing generated Javascript files.
+#
+# *.info.json is produced by the --dump-info flag.
+#
+# Don't specify *.js if your project includes source files written
+# in JavaScript.
+#-----------------------------------------------------------------------
+
+*.dart.js
+*.info.json
+*.js
+*.js_
+*.js.deps
+*.js.map
+
+#-----------------------------------------------------------------------
 # Android related
+#-----------------------------------------------------------------------
+
 **/android/**/gradle-wrapper.jar
 .gradle/
 **/android/captures/
@@ -95,7 +167,10 @@ unlinked_spec.ds
 **/android/key.properties
 *.jks
 
+#-----------------------------------------------------------------------
 # iOS/XCode related
+#-----------------------------------------------------------------------
+
 **/ios/**/*.mode1v3
 **/ios/**/*.mode2v3
 **/ios/**/*.moved-aside
@@ -125,30 +200,48 @@ unlinked_spec.ds
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 
+#-----------------------------------------------------------------------
 # macOS
+#-----------------------------------------------------------------------
+
 **/Flutter/ephemeral/
 **/Pods/
 **/macos/Flutter/GeneratedPluginRegistrant.swift
 **/macos/Flutter/ephemeral
 **/xcuserdata/
 
+#-----------------------------------------------------------------------
 # Windows
+#-----------------------------------------------------------------------
+
 **/windows/flutter/generated_plugin_registrant.cc
 **/windows/flutter/generated_plugin_registrant.h
 **/windows/flutter/generated_plugins.cmake
 
+#-----------------------------------------------------------------------
 # Linux
+#-----------------------------------------------------------------------
+
 **/linux/flutter/generated_plugin_registrant.cc
 **/linux/flutter/generated_plugin_registrant.h
 **/linux/flutter/generated_plugins.cmake
 
+#-----------------------------------------------------------------------
 # Coverage
+#-----------------------------------------------------------------------
+
 coverage/
 
+#-----------------------------------------------------------------------
 # Symbols
+#-----------------------------------------------------------------------
+
 app.*.symbols
 
+#-----------------------------------------------------------------------
 # Exceptions to above rules.
+#-----------------------------------------------------------------------
+
 !**/ios/**/default.mode1v3
 !**/ios/**/default.mode2v3
 !**/ios/**/default.pbxuser
