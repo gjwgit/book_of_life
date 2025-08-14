@@ -1,6 +1,6 @@
 /// Book of Life - Define the main entry point for the app.
 ///
-// Time-stamp: <Friday 2025-08-15 08:28:06 +1000 Graham Williams>
+// Time-stamp: <Friday 2025-08-15 09:02:32 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -31,6 +31,7 @@ import 'package:window_manager/window_manager.dart';
 
 import 'package:bol/book_of_life.dart';
 import 'package:bol/utils/is_desktop.dart';
+import 'package:bol/constants/app.dart';
 
 /// Main entry point for the [BookOfLife] application.
 
@@ -49,11 +50,12 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   if (isDesktop) {
-    const windowOptions = WindowOptions(
-      title: "Book Of Life - Your Life's Data in Your Hands",
-    );
+    const windowOptions = WindowOptions(title: appTitle);
     await windowManager.waitUntilReadyToShow(windowOptions, () async {});
   }
+
+  // The runApp() function takes the given Widget and makes it the root of the
+  // widget tree.
 
   runApp(const BookOfLife());
 }

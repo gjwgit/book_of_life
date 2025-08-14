@@ -1,12 +1,13 @@
-/// Book of Life - Your Life's Data Secured in One Place
+/// Book of Life - App-wide constants.
 ///
-// Time-stamp: <Friday 2025-08-15 08:54:51 +1000 Graham Williams>
+// Time-stamp: <Friday 2025-08-15 09:03:04 +1000 Graham Williams>
 ///
-/// Copyright (C) 2025, Software Innovation Institute, ANU
+/// Copyright (C) 2023, Software Innovation Institute
 ///
 /// Licensed under the GNU General Public License, Version 3 (the "License");
 ///
 /// License: https://www.gnu.org/licenses/gpl-3.0.en.html
+//
 //
 // This program is free software: you can redistribute it and/or modify it under
 // the terms of the GNU General Public License as published by the Free Software
@@ -21,6 +22,8 @@
 // You should have received a copy of the GNU General Public License along with
 // this program.  If not, see <https://www.gnu.org/licenses/>.
 ///
-/// Authors: AUTHORS
+/// Authors: Anushka Vidanage, Graham Williams, Jess Moore
 
 library;
+
+const String appTitle = "Book Of Life - Your Life's Data Secured in Your Pod";
