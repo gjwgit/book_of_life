@@ -1,6 +1,6 @@
-/// Book of Life - A Solid Pod browser
+/// Book of Life - Define the main entry point for the app.
 ///
-// Time-stamp: <Friday 2025-08-15 05:35:10 +1000 Graham Williams>
+// Time-stamp: <Friday 2025-08-15 08:26:49 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -25,9 +25,35 @@
 
 library;
 
-import 'package:bol/book_of_life.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'package:window_manager/window_manager.dart';
+
+import 'package:bol/book_of_life.dart';
+import 'package:bol/utils/is_desktop.dart';
+
+/// Main entry point for the [BookOfLife] application.
+
+void main() async {
+  // We require [async] because we asynchronously [await] the window manager
+  // below. Often, `main()` will include just the call [runApp].
+
+  // Optionally we can globally remove [debugPrint] messages.
+  //
+  // debugPrint = (String? message, {int? wrapWidth}) {
+  //   null;
+  // };
+
+  // Ensure Flutter bindings are initialized for async operations, in particular
+  // to set the Linux desktop window [title].
+
+  WidgetsFlutterBinding.ensureInitialized();
+  if (isDesktop) {
+    const windowOptions = WindowOptions(
+      title: 'Book Of Life - Your Life Data in Your Hands',
+    );
+    await windowManager.waitUntilReadyToShow(windowOptions, () async {});
+  }
+
   runApp(const BookOfLife());
 }
