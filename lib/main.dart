@@ -1,6 +1,6 @@
 /// Book of Life - Define the main entry point for the app.
 ///
-// Time-stamp: <Friday 2025-08-15 08:26:49 +1000 Graham Williams>
+// Time-stamp: <Friday 2025-08-15 08:28:06 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -50,7 +50,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (isDesktop) {
     const windowOptions = WindowOptions(
-      title: 'Book Of Life - Your Life Data in Your Hands',
+      title: "Book Of Life - Your Life's Data in Your Hands",
     );
     await windowManager.waitUntilReadyToShow(windowOptions, () async {});
   }
