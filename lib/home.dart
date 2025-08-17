@@ -1,6 +1,6 @@
 /// Book of Life - The application's home page.
 ///
-// Time-stamp: <Sunday 2025-08-17 14:54:51 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-08-17 14:57:16 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -27,8 +27,6 @@ library;
 
 import 'package:flutter/material.dart';
 
-import 'package:bol/widgets/solid_scaffold.dart';
-
 class AppHomePage extends StatefulWidget {
   const AppHomePage({super.key, required this.title});
 
@@ -41,23 +39,6 @@ class AppHomePage extends StatefulWidget {
 class _AppHomePageState extends State<AppHomePage> {
   @override
   Widget build(BuildContext context) {
-    return SolidScaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      navigationItems: [
-        NavigationItem(
-          icon: Icons.home,
-          label: 'Home',
-          widget: Text('MyHello World'),
-        ),
-        NavigationItem(
-          icon: Icons.settings,
-          label: 'Settings',
-          widget: Text('SettingsScreen()'),
-        ),
-      ],
-    );
+    return Text(widget.title);
   }
 }

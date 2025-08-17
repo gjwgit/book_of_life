@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Friday 2025-08-15 09:10:32 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-08-17 14:58:08 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -29,6 +29,7 @@ import 'package:flutter/material.dart';
 
 import 'package:bol/constants/app.dart';
 import 'package:bol/home.dart';
+import 'package:bol/widgets/solid_scaffold.dart';
 
 class BookOfLife extends StatelessWidget {
   const BookOfLife({super.key});
@@ -42,7 +43,24 @@ class BookOfLife extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
-      home: AppHomePage(title: appTitle.split(' - ')[0]),
+      home: SolidScaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: Text(appTitle),
+        ),
+        navigationItems: [
+          NavigationItem(
+            icon: Icons.home,
+            label: 'Home',
+            widget: AppHomePage(title: appTitle.split(' - ')[0]),
+          ),
+          NavigationItem(
+            icon: Icons.settings,
+            label: 'Settings',
+            widget: Text('SettingsScreen()'),
+          ),
+        ],
+      ),
     );
   }
 }
