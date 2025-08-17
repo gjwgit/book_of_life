@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-08-17 14:58:08 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-08-17 20:19:25 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -56,8 +56,17 @@ class BookOfLife extends StatelessWidget {
           ),
           NavigationItem(
             icon: Icons.settings,
-            label: 'Settings',
-            widget: Text('SettingsScreen()'),
+            label: 'Another',
+            widget: Center(
+              child: Text('Another Page', style: TextStyle(fontSize: 24)),
+            ),
+          ),
+          NavigationItem(
+            icon: Icons.person,
+            label: 'Profile',
+            widget: Center(
+              child: Text('Profile Page', style: TextStyle(fontSize: 24)),
+            ),
           ),
         ],
       ),
