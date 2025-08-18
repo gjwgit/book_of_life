@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.togaware.com" "\0"
+            VALUE "CompanyName", "com.togaware" "\0"
             VALUE "FileDescription", "bol" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "bol" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.togaware.com. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 com.togaware. All rights reserved." "\0"
             VALUE "OriginalFilename", "bol.exe" "\0"
             VALUE "ProductName", "bol" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
