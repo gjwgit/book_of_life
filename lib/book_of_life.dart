@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-08-17 20:19:25 +1000 Graham Williams>
+// Time-stamp: <Monday 2025-08-18 17:08:31 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -27,9 +27,10 @@ library;
 
 import 'package:flutter/material.dart';
 
+import 'package:solidui/solidui.dart';
+
 import 'package:bol/constants/app.dart';
 import 'package:bol/home.dart';
-import 'package:bol/widgets/solid_scaffold.dart';
 
 class BookOfLife extends StatelessWidget {
   const BookOfLife({super.key});
@@ -44,31 +45,72 @@ class BookOfLife extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
       home: SolidScaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(appTitle),
-        ),
-        navigationItems: [
-          NavigationItem(
+        menu: [
+          SolidMenuItem(
             icon: Icons.home,
-            label: 'Home',
-            widget: AppHomePage(title: appTitle.split(' - ')[0]),
+            title: 'Profile',
+            tooltip: '''
+
+            **Home:** Tap here to return to the main page for the app.
+
+            ''',
+            // widget: AppHomePage(title: appTitle.split(' - ')[0]),
           ),
-          NavigationItem(
+          SolidMenuItem(
             icon: Icons.settings,
-            label: 'Another',
-            widget: Center(
-              child: Text('Another Page', style: TextStyle(fontSize: 24)),
-            ),
+            title: 'Health',
+            tooltip: '''
+
+            **Health:** Tap here for a summary of your health. You main health
+              data is managed witheth HealthPod and other apps.
+
+            ''',
+            // widget: Center(
+            // child: Text('Another Page', style: TextStyle(fontSize: 24)),
+            // ),
           ),
-          NavigationItem(
+          SolidMenuItem(
             icon: Icons.person,
-            label: 'Profile',
-            widget: Center(
-              child: Text('Profile Page', style: TextStyle(fontSize: 24)),
-            ),
+            title: 'Interests',
+            tooltip: '''
+
+            **Interests:** Tap here to access your life interests. You Movie
+              interests are managed by the MovieStar app but you get a summary
+              here.
+
+            ''',
+            // widget: Center(
+            // child: Text('Profile Page', style: TextStyle(fontSize: 24)),
+            // ),
           ),
         ],
+        appBar: SolidAppBarConfig(
+          title: 'My Application',
+          actions: [
+            SolidAppBarAction(
+              icon: Icons.search,
+              onPressed: () => print('Search'),
+              tooltip: 'Search',
+            ),
+            SolidAppBarAction(
+              icon: Icons.notifications,
+              onPressed: () => print('Notifications'),
+              tooltip: 'Notifications',
+              hideOnNarrowScreen: true, // Hide on narrow screens
+            ),
+          ],
+          overflowItems: [
+            SolidOverflowMenuItem(
+              id: 'help',
+              icon: Icons.help,
+              label: 'Help',
+              onSelected: () => print('Help'),
+            ),
+          ],
+        ),
+        child: Center(
+          child: Text('This will be the main app page.\nThe Home page.'),
+        ),
       ),
     );
   }
