@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Monday 2025-08-18 17:08:31 +1000 Graham Williams>
+// Time-stamp: <Monday 2025-08-18 19:34:38 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -30,7 +30,6 @@ import 'package:flutter/material.dart';
 import 'package:solidui/solidui.dart';
 
 import 'package:bol/constants/app.dart';
-import 'package:bol/home.dart';
 
 class BookOfLife extends StatelessWidget {
   const BookOfLife({super.key});
@@ -40,6 +39,7 @@ class BookOfLife extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: appTitle,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
@@ -48,7 +48,7 @@ class BookOfLife extends StatelessWidget {
         menu: [
           SolidMenuItem(
             icon: Icons.home,
-            title: 'Profile',
+            title: 'Home',
             tooltip: '''
 
             **Home:** Tap here to return to the main page for the app.
@@ -107,6 +107,18 @@ class BookOfLife extends StatelessWidget {
               onSelected: () => print('Help'),
             ),
           ],
+        ),
+        statusBar: SolidStatusBarConfig(
+          serverInfo: SolidServerInfo(
+            serverUri: 'https://example.com',
+            tooltip: 'Server status',
+          ),
+          loginStatus: SolidLoginStatus(
+            webId: 'user@example.com',
+            onTap: () => print('Login/Logout'),
+            loggedInTooltip: 'Click to log out',
+            loggedOutTooltip: 'Click to log in',
+          ),
         ),
         child: Center(
           child: Text('This will be the main app page.\nThe Home page.'),
