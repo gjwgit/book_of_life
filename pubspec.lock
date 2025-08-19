@@ -614,8 +614,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "tony/1_initialisation"
-      resolved-ref: e1fd4b814eb327a4ed7e1817ec5cc1aca0d0bf19
+      ref: dev
+      resolved-ref: "4ca74e47b4825311fcf646ce3fd945ba164eb617"
       url: "https://github.com/anusii/solidui.git"
     source: git
     version: "0.0.1"
