@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Monday 2025-08-18 19:34:38 +1000 Graham Williams>
+// Time-stamp: <Wednesday 2025-08-20 09:26:53 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -31,6 +31,15 @@ import 'package:solidui/solidui.dart';
 
 import 'package:bol/constants/app.dart';
 
+// Which sample Scaffold to use.
+//
+// 0 = Just a basic Text widget.
+// 1 = Test floating menu with narrow screen.
+// 2 = Test dark/light mode.
+// 9 = My final Scaffold for the app.
+
+int useScaffold = 2;
+
 class BookOfLife extends StatelessWidget {
   const BookOfLife({super.key});
 
@@ -39,91 +48,133 @@ class BookOfLife extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Turn off debug banner for now.
       debugShowCheckedModeBanner: false,
       title: appTitle,
+
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
-      home: SolidScaffold(
-        menu: [
-          SolidMenuItem(
-            icon: Icons.home,
-            title: 'Home',
-            tooltip: '''
 
-            **Home:** Tap here to return to the main page for the app.
-
-            ''',
-            // widget: AppHomePage(title: appTitle.split(' - ')[0]),
-          ),
-          SolidMenuItem(
-            icon: Icons.settings,
-            title: 'Health',
-            tooltip: '''
-
-            **Health:** Tap here for a summary of your health. You main health
-              data is managed witheth HealthPod and other apps.
-
-            ''',
-            // widget: Center(
-            // child: Text('Another Page', style: TextStyle(fontSize: 24)),
-            // ),
-          ),
-          SolidMenuItem(
-            icon: Icons.person,
-            title: 'Interests',
-            tooltip: '''
-
-            **Interests:** Tap here to access your life interests. You Movie
-              interests are managed by the MovieStar app but you get a summary
-              here.
-
-            ''',
-            // widget: Center(
-            // child: Text('Profile Page', style: TextStyle(fontSize: 24)),
-            // ),
-          ),
-        ],
-        appBar: SolidAppBarConfig(
-          title: 'My Application',
-          actions: [
-            SolidAppBarAction(
-              icon: Icons.search,
-              onPressed: () => print('Search'),
-              tooltip: 'Search',
-            ),
-            SolidAppBarAction(
-              icon: Icons.notifications,
-              onPressed: () => print('Notifications'),
-              tooltip: 'Notifications',
-              hideOnNarrowScreen: true, // Hide on narrow screens
-            ),
-          ],
-          overflowItems: [
-            SolidOverflowMenuItem(
-              id: 'help',
-              icon: Icons.help,
-              label: 'Help',
-              onSelected: () => print('Help'),
-            ),
-          ],
+      // This is the usual Scaffold() that we then "seemlessly" replace with
+      // SolidScaffold().
+      home: switch (useScaffold) {
+        1 => SolidScaffold(menu: sampleMenu, child: sampleChild),
+        2 => SolidScaffold(
+          menu: sampleMenu,
+          themeToggle: sampleThemeToggle,
+          child: sampleChild,
         ),
-        statusBar: SolidStatusBarConfig(
-          serverInfo: SolidServerInfo(
-            serverUri: 'https://example.com',
-            tooltip: 'Server status',
-          ),
-          loginStatus: SolidLoginStatus(
-            webId: 'user@example.com',
-            onTap: () => print('Login/Logout'),
-            loggedInTooltip: 'Click to log out',
-            loggedOutTooltip: 'Click to log in',
-          ),
+        9 => SolidScaffold(
+          menu: sampleMenu,
+          appBar: sampleAppBar,
+          statusBar: sampleStatusBar,
+          child: sampleChild,
         ),
-        child: Center(
-          child: Text('This will be the main app page.\nThe Home page.'),
-        ),
-      ),
+        _ => Scaffold(body: sampleChild),
+      },
     );
   }
 }
+
+// Define sample widgets.
+
+const sampleMenu = [
+  SolidMenuItem(
+    icon: Icons.home,
+    title: 'Home',
+    tooltip: '''
+
+    **Home:** Tap here to return to the main page for the app.
+
+    ''',
+    // widget: AppHomePage(title: appTitle.split(' - ')[0]),
+  ),
+  SolidMenuItem(
+    icon: Icons.settings,
+    title: 'Health',
+    tooltip: '''
+
+    **Health:** Tap here for a summary of your health. You main health
+    data is managed witheth HealthPod and other apps.
+
+    ''',
+    // widget: Center(
+    // child: Text('Another Page', style: TextStyle(fontSize: 24)),
+    // ),
+  ),
+  SolidMenuItem(
+    icon: Icons.person,
+    title: 'Interests',
+    tooltip: '''
+
+    **Interests:** Tap here to access your life interests. You Movie
+    interests are managed by the MovieStar app but you get a summary
+    here.
+
+    ''',
+    // widget: Center(
+    // child: Text('Profile Page', style: TextStyle(fontSize: 24)),
+    // ),
+  ),
+];
+
+const sampleChild = Center(
+  child: Text('This will be the main app page.\nThe Home page.'),
+);
+
+final sampleAppBar = SolidAppBarConfig(
+  title: 'My Application',
+  actions: [
+    SolidAppBarAction(
+      icon: Icons.search,
+      onPressed: () => print('Search'),
+      tooltip: 'Search',
+    ),
+    SolidAppBarAction(
+      icon: Icons.notifications,
+      onPressed: () => print('Notifications'),
+      tooltip: 'Notifications',
+      hideOnNarrowScreen: true, // Hide on narrow screens
+    ),
+  ],
+  overflowItems: [
+    SolidOverflowMenuItem(
+      id: 'help',
+      icon: Icons.help,
+      label: 'Help',
+      onSelected: () => print('Help'),
+    ),
+  ],
+);
+
+final sampleStatusBar = SolidStatusBarConfig(
+  serverInfo: SolidServerInfo(
+    serverUri: 'https://example.com',
+    tooltip: 'Server status',
+  ),
+  loginStatus: SolidLoginStatus(
+    webId: 'user@example.com',
+    onTap: () => print('Login/Logout'),
+    loggedInTooltip: 'Click to log out',
+    loggedOutTooltip: 'Click to log in',
+  ),
+);
+
+final sampleThemeToggle = SolidThemeToggleConfig(
+  enabled: true,
+  currentThemeMode: _currentThemeMode,
+  onToggleTheme: _toggleTheme,
+  showInAppBarActions: true,
+  hideOnVeryNarrowScreen: true,
+  tooltip: '''
+**Theme Toggle**
+
+Switch between light and dark modes for optimal viewing experience.
+
+🌙 **Dark Mode**: Better for low-light environments
+
+☀️ **Light Mode**: Better for bright environments
+
+''',
+);
