@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Wednesday 2025-08-20 09:26:53 +1000 Graham Williams>
+// Time-stamp: <Wednesday 2025-08-20 10:23:23 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -38,7 +38,7 @@ import 'package:bol/constants/app.dart';
 // 2 = Test dark/light mode.
 // 9 = My final Scaffold for the app.
 
-int useScaffold = 2;
+int useScaffold = 9;
 
 class BookOfLife extends StatelessWidget {
   const BookOfLife({super.key});
@@ -67,6 +67,7 @@ class BookOfLife extends StatelessWidget {
         ),
         9 => SolidScaffold(
           menu: sampleMenu,
+          themeToggle: sampleThemeToggle,
           appBar: sampleAppBar,
           statusBar: sampleStatusBar,
           child: sampleChild,
@@ -76,6 +77,8 @@ class BookOfLife extends StatelessWidget {
     );
   }
 }
+
+////////////////////////////////////////////////////////////////////////
 
 // Define sample widgets.
 
@@ -146,6 +149,7 @@ final sampleAppBar = SolidAppBarConfig(
       onSelected: () => print('Help'),
     ),
   ],
+  versionConfig: sampleVersion,
 );
 
 final sampleStatusBar = SolidStatusBarConfig(
@@ -163,8 +167,8 @@ final sampleStatusBar = SolidStatusBarConfig(
 
 final sampleThemeToggle = SolidThemeToggleConfig(
   enabled: true,
-  currentThemeMode: _currentThemeMode,
-  onToggleTheme: _toggleTheme,
+  //  currentThemeMode: _currentThemeMode,
+  //  onToggleTheme: _toggleTheme,
   showInAppBarActions: true,
   hideOnVeryNarrowScreen: true,
   tooltip: '''
@@ -175,6 +179,24 @@ Switch between light and dark modes for optimal viewing experience.
 🌙 **Dark Mode**: Better for low-light environments
 
 ☀️ **Light Mode**: Better for bright environments
+
+''',
+);
+
+final sampleVersion = SolidVersionConfig(
+  version: '0.0.1',
+  changelogUrl:
+      'https://github.com/gjwgit/book_of_life/blob/main/'
+      'CHANGELOG.md',
+  showDate: true,
+  tooltip: '''
+**SolidUI Example**
+
+Version: 0.0.1
+
+This is a demonstration of the SolidScaffold component with all its features.
+
+Click to view the README file.
 
 ''',
 );
