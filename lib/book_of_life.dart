@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Wednesday 2025-08-20 16:30:54 +1000 Graham Williams>
+// Time-stamp: <Wednesday 2025-08-20 17:09:44 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -207,16 +207,5 @@ SolidVersionConfig buildSampleVersion(String version) {
         'https://github.com/gjwgit/book_of_life/blob/dev/'
         'CHANGELOG.md',
     showDate: true,
-    tooltip:
-        '''
-  **SolidUI Example**
-
-  Version: $version
-
-  This is a demonstration of the SolidScaffold component with all its features.
-
-  Click to view the README file.
-
-  ''',
   );
 }
