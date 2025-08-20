@@ -26,5 +26,5 @@ au](https://solidcommunity.au/docs/bol)
 
 ## 0.1 First beta release
 
-+ Test SolidScaffold functionality [0.0.2 gjw 20250820]
-+ Initialise the app [0.0.1 gjw 20250818]
++ Test SolidScaffold functionality [0.0.2 20250820 gjw]
++ Initialise the app [0.0.1 20250818 gjw]
