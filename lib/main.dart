@@ -1,6 +1,6 @@
 /// Book of Life - Define the main entry point for the app.
 ///
-// Time-stamp: <Friday 2025-08-15 09:02:32 +1000 Graham Williams>
+// Time-stamp: <Wednesday 2025-08-20 15:21:01 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -57,5 +57,5 @@ void main() async {
   // The runApp() function takes the given Widget and makes it the root of the
   // widget tree.
 
-  runApp(const BookOfLife());
+  runApp(BookOfLife());
 }

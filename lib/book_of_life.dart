@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Wednesday 2025-08-20 10:23:23 +1000 Graham Williams>
+// Time-stamp: <Wednesday 2025-08-20 16:30:54 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -27,6 +27,7 @@ library;
 
 import 'package:flutter/material.dart';
 
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:solidui/solidui.dart';
 
 import 'package:bol/constants/app.dart';
@@ -41,38 +42,52 @@ import 'package:bol/constants/app.dart';
 int useScaffold = 9;
 
 class BookOfLife extends StatelessWidget {
-  const BookOfLife({super.key});
+  BookOfLife({super.key});
 
   // This widget is the root of the application.
 
+  // Determine the app's version.
+
+  final Future<String> versionFuture = PackageInfo.fromPlatform().then(
+    (info) => info.version,
+  );
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // Turn off debug banner for now.
-      debugShowCheckedModeBanner: false,
-      title: appTitle,
+    return FutureBuilder<String>(
+      future: versionFuture,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return MaterialApp(
+            // Turn off debug banner for now.
+            debugShowCheckedModeBanner: false,
+            title: appTitle,
 
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-      ),
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+            ),
 
-      // This is the usual Scaffold() that we then "seemlessly" replace with
-      // SolidScaffold().
-      home: switch (useScaffold) {
-        1 => SolidScaffold(menu: sampleMenu, child: sampleChild),
-        2 => SolidScaffold(
-          menu: sampleMenu,
-          themeToggle: sampleThemeToggle,
-          child: sampleChild,
-        ),
-        9 => SolidScaffold(
-          menu: sampleMenu,
-          themeToggle: sampleThemeToggle,
-          appBar: sampleAppBar,
-          statusBar: sampleStatusBar,
-          child: sampleChild,
-        ),
-        _ => Scaffold(body: sampleChild),
+            // This is the usual Scaffold() that we then "seemlessly" replace with
+            // SolidScaffold().
+            home: switch (useScaffold) {
+              1 => SolidScaffold(menu: sampleMenu, child: sampleChild),
+              2 => SolidScaffold(
+                menu: sampleMenu,
+                themeToggle: sampleThemeToggle,
+                child: sampleChild,
+              ),
+              9 => SolidScaffold(
+                menu: sampleMenu,
+                themeToggle: sampleThemeToggle,
+                appBar: buildSampleAppBar(snapshot.data ?? ''),
+                statusBar: sampleStatusBar,
+                child: sampleChild,
+              ),
+              _ => Scaffold(body: sampleChild),
+            },
+          );
+        }
+        return CircularProgressIndicator();
       },
     );
   }
@@ -126,35 +141,37 @@ const sampleChild = Center(
   child: Text('This will be the main app page.\nThe Home page.'),
 );
 
-final sampleAppBar = SolidAppBarConfig(
-  title: 'My Application',
-  actions: [
-    SolidAppBarAction(
-      icon: Icons.search,
-      onPressed: () => print('Search'),
-      tooltip: 'Search',
-    ),
-    SolidAppBarAction(
-      icon: Icons.notifications,
-      onPressed: () => print('Notifications'),
-      tooltip: 'Notifications',
-      hideOnNarrowScreen: true, // Hide on narrow screens
-    ),
-  ],
-  overflowItems: [
-    SolidOverflowMenuItem(
-      id: 'help',
-      icon: Icons.help,
-      label: 'Help',
-      onSelected: () => print('Help'),
-    ),
-  ],
-  versionConfig: sampleVersion,
-);
+SolidAppBarConfig buildSampleAppBar(String version) {
+  return SolidAppBarConfig(
+    title: 'My Application',
+    actions: [
+      SolidAppBarAction(
+        icon: Icons.search,
+        onPressed: () => print('Search'),
+        tooltip: 'Search',
+      ),
+      SolidAppBarAction(
+        icon: Icons.notifications,
+        onPressed: () => print('Notifications'),
+        tooltip: 'Notifications',
+        hideOnNarrowScreen: true, // Hide on narrow screens
+      ),
+    ],
+    overflowItems: [
+      SolidOverflowMenuItem(
+        id: 'help',
+        icon: Icons.help,
+        label: 'Help',
+        onSelected: () => print('Help'),
+      ),
+    ],
+    versionConfig: buildSampleVersion(version),
+  );
+}
 
 final sampleStatusBar = SolidStatusBarConfig(
   serverInfo: SolidServerInfo(
-    serverUri: 'https://example.com',
+    serverUri: 'https://pods.solidcommunity.au',
     tooltip: 'Server status',
   ),
   loginStatus: SolidLoginStatus(
@@ -183,20 +200,23 @@ Switch between light and dark modes for optimal viewing experience.
 ''',
 );
 
-final sampleVersion = SolidVersionConfig(
-  version: '0.0.1',
-  changelogUrl:
-      'https://github.com/gjwgit/book_of_life/blob/main/'
-      'CHANGELOG.md',
-  showDate: true,
-  tooltip: '''
-**SolidUI Example**
+SolidVersionConfig buildSampleVersion(String version) {
+  return SolidVersionConfig(
+    version: version,
+    changelogUrl:
+        'https://github.com/gjwgit/book_of_life/blob/dev/'
+        'CHANGELOG.md',
+    showDate: true,
+    tooltip:
+        '''
+  **SolidUI Example**
 
-Version: 0.0.1
+  Version: $version
 
-This is a demonstration of the SolidScaffold component with all its features.
+  This is a demonstration of the SolidScaffold component with all its features.
 
-Click to view the README file.
+  Click to view the README file.
 
-''',
-);
+  ''',
+  );
+}
