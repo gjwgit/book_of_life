@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Wednesday 2025-08-20 17:09:44 +1000 Graham Williams>
+// Time-stamp: <Thursday 2025-08-21 14:56:38 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -147,12 +147,12 @@ SolidAppBarConfig buildSampleAppBar(String version) {
     actions: [
       SolidAppBarAction(
         icon: Icons.search,
-        onPressed: () => print('Search'),
+        onPressed: () => debugPrint('Search'),
         tooltip: 'Search',
       ),
       SolidAppBarAction(
         icon: Icons.notifications,
-        onPressed: () => print('Notifications'),
+        onPressed: () => debugPrint('Notifications'),
         tooltip: 'Notifications',
         hideOnNarrowScreen: true, // Hide on narrow screens
       ),
@@ -162,7 +162,7 @@ SolidAppBarConfig buildSampleAppBar(String version) {
         id: 'help',
         icon: Icons.help,
         label: 'Help',
-        onSelected: () => print('Help'),
+        onSelected: () => debugPrint('Help'),
       ),
     ],
     versionConfig: buildSampleVersion(version),
@@ -176,7 +176,7 @@ final sampleStatusBar = SolidStatusBarConfig(
   ),
   loginStatus: SolidLoginStatus(
     webId: 'user@example.com',
-    onTap: () => print('Login/Logout'),
+    onTap: () => debugPrint('Login/Logout'),
     loggedInTooltip: 'Click to log out',
     loggedOutTooltip: 'Click to log in',
   ),
