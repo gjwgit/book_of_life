@@ -20,7 +20,6 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-  package_info_plus: ^8.3.0
   solidui:
     git:
       url: https://github.com/anusii/solidui.git

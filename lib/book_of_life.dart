@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Thursday 2025-08-21 14:56:38 +1000 Graham Williams>
+// Time-stamp: <Thursday 2025-08-21 16:20:03 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -27,14 +27,13 @@ library;
 
 import 'package:flutter/material.dart';
 
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:solidui/solidui.dart';
 
 import 'package:bol/constants/app.dart';
 
 // Which sample Scaffold to use.
 //
-// 0 = Just a basic Text widget.
+// 0 = Just a basic Text widget within a standard Scaffold.
 // 1 = Test floating menu with narrow screen.
 // 2 = Test dark/light mode.
 // 9 = My final Scaffold for the app.
@@ -42,52 +41,39 @@ import 'package:bol/constants/app.dart';
 int useScaffold = 9;
 
 class BookOfLife extends StatelessWidget {
-  BookOfLife({super.key});
+  const BookOfLife({super.key});
 
   // This widget is the root of the application.
 
-  // Determine the app's version.
-
-  final Future<String> versionFuture = PackageInfo.fromPlatform().then(
-    (info) => info.version,
-  );
-
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<String>(
-      future: versionFuture,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return MaterialApp(
-            // Turn off debug banner for now.
-            debugShowCheckedModeBanner: false,
-            title: appTitle,
+    return MaterialApp(
+      // Turn off debug banner for now.
+      debugShowCheckedModeBanner: false,
+      title: appTitle,
 
-            theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-            ),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+      ),
 
-            // This is the usual Scaffold() that we then "seemlessly" replace with
-            // SolidScaffold().
-            home: switch (useScaffold) {
-              1 => SolidScaffold(menu: sampleMenu, child: sampleChild),
-              2 => SolidScaffold(
-                menu: sampleMenu,
-                themeToggle: sampleThemeToggle,
-                child: sampleChild,
-              ),
-              9 => SolidScaffold(
-                menu: sampleMenu,
-                themeToggle: sampleThemeToggle,
-                appBar: buildSampleAppBar(snapshot.data ?? ''),
-                statusBar: sampleStatusBar,
-                child: sampleChild,
-              ),
-              _ => Scaffold(body: sampleChild),
-            },
-          );
-        }
-        return CircularProgressIndicator();
+      // This is the usual Scaffold() that we then "seemlessly" replace with
+      // SolidScaffold().
+      home: switch (useScaffold) {
+        0 => Scaffold(body: sampleChild), // #7
+        1 => SolidScaffold(menu: sampleMenu, child: sampleChild),
+        2 => SolidScaffold(
+          menu: sampleMenu,
+          themeToggle: sampleThemeToggle,
+          child: sampleChild,
+        ),
+        9 => SolidScaffold(
+          menu: sampleMenu,
+          themeToggle: sampleThemeToggle,
+          appBar: buildSampleAppBar,
+          statusBar: sampleStatusBar,
+          child: sampleChild,
+        ),
+        _ => Scaffold(body: sampleChild),
       },
     );
   }
@@ -106,7 +92,7 @@ const sampleMenu = [
     **Home:** Tap here to return to the main page for the app.
 
     ''',
-    // widget: AppHomePage(title: appTitle.split(' - ')[0]),
+    // child: sampleChild,
   ),
   SolidMenuItem(
     icon: Icons.settings,
@@ -117,8 +103,8 @@ const sampleMenu = [
     data is managed witheth HealthPod and other apps.
 
     ''',
-    // widget: Center(
-    // child: Text('Another Page', style: TextStyle(fontSize: 24)),
+    // child: Center(
+    //   child: Text('Another Page', style: TextStyle(fontSize: 24)),
     // ),
   ),
   SolidMenuItem(
@@ -131,8 +117,8 @@ const sampleMenu = [
     here.
 
     ''',
-    // widget: Center(
-    // child: Text('Profile Page', style: TextStyle(fontSize: 24)),
+    // child: Center(
+    //   child: Text('Profile Page', style: TextStyle(fontSize: 24)),
     // ),
   ),
 ];
@@ -141,33 +127,31 @@ const sampleChild = Center(
   child: Text('This will be the main app page.\nThe Home page.'),
 );
 
-SolidAppBarConfig buildSampleAppBar(String version) {
-  return SolidAppBarConfig(
-    title: 'My Application',
-    actions: [
-      SolidAppBarAction(
-        icon: Icons.search,
-        onPressed: () => debugPrint('Search'),
-        tooltip: 'Search',
-      ),
-      SolidAppBarAction(
-        icon: Icons.notifications,
-        onPressed: () => debugPrint('Notifications'),
-        tooltip: 'Notifications',
-        hideOnNarrowScreen: true, // Hide on narrow screens
-      ),
-    ],
-    overflowItems: [
-      SolidOverflowMenuItem(
-        id: 'help',
-        icon: Icons.help,
-        label: 'Help',
-        onSelected: () => debugPrint('Help'),
-      ),
-    ],
-    versionConfig: buildSampleVersion(version),
-  );
-}
+final buildSampleAppBar = SolidAppBarConfig(
+  title: appTitle,
+  actions: [
+    SolidAppBarAction(
+      icon: Icons.search,
+      onPressed: () => debugPrint('Search'),
+      tooltip: 'Search',
+    ),
+    SolidAppBarAction(
+      icon: Icons.notifications,
+      onPressed: () => debugPrint('Notifications'),
+      tooltip: 'Notifications',
+      hideOnNarrowScreen: true, // Hide on narrow screens
+    ),
+  ],
+  overflowItems: [
+    SolidOverflowMenuItem(
+      id: 'help',
+      icon: Icons.help,
+      label: 'Help',
+      onSelected: () => debugPrint('Help'),
+    ),
+  ],
+  versionConfig: buildSampleVersion,
+);
 
 final sampleStatusBar = SolidStatusBarConfig(
   serverInfo: SolidServerInfo(
@@ -200,12 +184,9 @@ Switch between light and dark modes for optimal viewing experience.
 ''',
 );
 
-SolidVersionConfig buildSampleVersion(String version) {
-  return SolidVersionConfig(
-    version: version,
-    changelogUrl:
-        'https://github.com/gjwgit/book_of_life/blob/dev/'
-        'CHANGELOG.md',
-    showDate: true,
-  );
-}
+final buildSampleVersion = SolidVersionConfig(
+  changelogUrl:
+      'https://github.com/gjwgit/book_of_life/blob/dev/'
+      'CHANGELOG.md',
+  showDate: true,
+);
