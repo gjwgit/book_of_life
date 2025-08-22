@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Thursday 2025-08-21 16:20:03 +1000 Graham Williams>
+// Time-stamp: <Saturday 2025-08-23 09:30:46 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -59,7 +59,7 @@ class BookOfLife extends StatelessWidget {
       // This is the usual Scaffold() that we then "seemlessly" replace with
       // SolidScaffold().
       home: switch (useScaffold) {
-        0 => Scaffold(body: sampleChild), // #7
+        0 => SolidScaffold(body: sampleChild), // #7
         1 => SolidScaffold(menu: sampleMenu, child: sampleChild),
         2 => SolidScaffold(
           menu: sampleMenu,
@@ -139,7 +139,6 @@ final buildSampleAppBar = SolidAppBarConfig(
       icon: Icons.notifications,
       onPressed: () => debugPrint('Notifications'),
       tooltip: 'Notifications',
-      hideOnNarrowScreen: true, // Hide on narrow screens
     ),
   ],
   overflowItems: [
@@ -171,7 +170,6 @@ final sampleThemeToggle = SolidThemeToggleConfig(
   //  currentThemeMode: _currentThemeMode,
   //  onToggleTheme: _toggleTheme,
   showInAppBarActions: true,
-  hideOnVeryNarrowScreen: true,
   tooltip: '''
 **Theme Toggle**
 
