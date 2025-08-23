@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Saturday 2025-08-23 09:30:46 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-08-24 08:33:33 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -170,6 +170,7 @@ final sampleThemeToggle = SolidThemeToggleConfig(
   //  currentThemeMode: _currentThemeMode,
   //  onToggleTheme: _toggleTheme,
   showInAppBarActions: true,
+  //  hideOnVeryNarrowScreen: true,
   tooltip: '''
 **Theme Toggle**
 
