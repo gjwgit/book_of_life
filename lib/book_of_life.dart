@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-08-24 08:33:33 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-08-24 08:42:00 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -40,10 +40,12 @@ import 'package:bol/constants/app.dart';
 
 int useScaffold = 9;
 
+// This widget is the root of the application.
+//
+// To support the darl.light theme this needs to be a StatefulWidget?
+
 class BookOfLife extends StatelessWidget {
   const BookOfLife({super.key});
-
-  // This widget is the root of the application.
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +84,8 @@ class BookOfLife extends StatelessWidget {
 ////////////////////////////////////////////////////////////////////////
 
 // Define sample widgets.
+
+// TODO I would like to specify chid actions here, not separated somewhere else.
 
 const sampleMenu = [
   SolidMenuItem(
@@ -164,6 +168,8 @@ final sampleStatusBar = SolidStatusBarConfig(
     loggedOutTooltip: 'Click to log in',
   ),
 );
+
+// TODO This should be part of SolidScaffold, not in my code.
 
 final sampleThemeToggle = SolidThemeToggleConfig(
   enabled: true,
