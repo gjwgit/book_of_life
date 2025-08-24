@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-08-24 08:42:00 +1000 Graham Williams>
+// Time-stamp: <Monday 2025-08-25 09:35:08 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -73,6 +73,7 @@ class BookOfLife extends StatelessWidget {
           themeToggle: sampleThemeToggle,
           appBar: buildSampleAppBar,
           statusBar: sampleStatusBar,
+          aboutConfig: sampleAboutConfig,
           child: sampleChild,
         ),
         _ => Scaffold(body: sampleChild),
@@ -84,6 +85,90 @@ class BookOfLife extends StatelessWidget {
 ////////////////////////////////////////////////////////////////////////
 
 // Define sample widgets.
+
+////////////////////////////////////
+// ABOUT
+
+final sampleAboutConfig = SolidAboutConfig(
+  applicationName: appTitle.split(' - ')[0],
+  applicationIcon: Icon(Icons.apps, size: 64),
+  applicationLegalese: '''© 2025 My Company''',
+  text: '''
+
+  Your book of life is written by you. This app provides support for you to do
+  just that, while retaining all your data encrypted and secure on a Solid
+  server of your choice.
+
+  **Features:**
+
+  • Your important numbers are stored here and available whereever your are.
+
+  • Your health data can be populated here and shared with your doctor.
+
+  • All data is stored encrypted as a POD on a Solid Server of your choice.
+
+  For more information, visit [github](https://github.com/gjwgit/book_of_life).
+
+''',
+);
+
+////////////////////////////////////
+// CHILD
+
+const sampleChild = Center(
+  child: Text('This will be the main app page.\nThe Home page.'),
+);
+
+final buildSampleAppBar = SolidAppBarConfig(
+  title: appTitle,
+  actions: [
+    SolidAppBarAction(
+      icon: Icons.search,
+      onPressed: () => debugPrint('Search'),
+      tooltip: 'Search',
+    ),
+    SolidAppBarAction(
+      icon: Icons.notifications,
+      onPressed: () => debugPrint('Notifications'),
+      tooltip: 'Notifications',
+    ),
+  ],
+  overflowItems: [
+    SolidOverflowMenuItem(
+      id: 'help',
+      icon: Icons.help,
+      label: 'Help',
+      onSelected: () => debugPrint('Help'),
+    ),
+  ],
+  versionConfig: buildSampleVersion,
+);
+
+////////////////////////////////////
+// DARK/LIGHT Mode
+
+// TODO This should be part of SolidScaffold, not in my code.
+
+final sampleThemeToggle = SolidThemeToggleConfig(
+  enabled: true,
+  //  currentThemeMode: _currentThemeMode,
+  //  onToggleTheme: _toggleTheme,
+  showInAppBarActions: true,
+  //  hideOnVeryNarrowScreen: true,
+  tooltip: '''
+**Theme Toggle**
+
+Switch between light and dark modes for optimal viewing experience.
+
+🌙 **Dark Mode**: Better for low-light environments
+
+☀️ **Light Mode**: Better for bright environments
+
+''',
+);
+
+////////////////////////////////////
+// MENU
 
 // TODO I would like to specify chid actions here, not separated somewhere else.
 
@@ -127,34 +212,8 @@ const sampleMenu = [
   ),
 ];
 
-const sampleChild = Center(
-  child: Text('This will be the main app page.\nThe Home page.'),
-);
-
-final buildSampleAppBar = SolidAppBarConfig(
-  title: appTitle,
-  actions: [
-    SolidAppBarAction(
-      icon: Icons.search,
-      onPressed: () => debugPrint('Search'),
-      tooltip: 'Search',
-    ),
-    SolidAppBarAction(
-      icon: Icons.notifications,
-      onPressed: () => debugPrint('Notifications'),
-      tooltip: 'Notifications',
-    ),
-  ],
-  overflowItems: [
-    SolidOverflowMenuItem(
-      id: 'help',
-      icon: Icons.help,
-      label: 'Help',
-      onSelected: () => debugPrint('Help'),
-    ),
-  ],
-  versionConfig: buildSampleVersion,
-);
+////////////////////////////////////
+// STATUS BAR
 
 final sampleStatusBar = SolidStatusBarConfig(
   serverInfo: SolidServerInfo(
@@ -169,25 +228,8 @@ final sampleStatusBar = SolidStatusBarConfig(
   ),
 );
 
-// TODO This should be part of SolidScaffold, not in my code.
-
-final sampleThemeToggle = SolidThemeToggleConfig(
-  enabled: true,
-  //  currentThemeMode: _currentThemeMode,
-  //  onToggleTheme: _toggleTheme,
-  showInAppBarActions: true,
-  //  hideOnVeryNarrowScreen: true,
-  tooltip: '''
-**Theme Toggle**
-
-Switch between light and dark modes for optimal viewing experience.
-
-🌙 **Dark Mode**: Better for low-light environments
-
-☀️ **Light Mode**: Better for bright environments
-
-''',
-);
+////////////////////////////////////
+// VERSION
 
 final buildSampleVersion = SolidVersionConfig(
   changelogUrl:

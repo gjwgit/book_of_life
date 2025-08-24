@@ -561,8 +561,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "tony/8_about_button"
-      resolved-ref: "2a5acee72dc9734838faedd7cce2959de6bb8a79"
+      ref: dev
+      resolved-ref: beaee5c36a7c648506124908b5718418940efc99
       url: "https://github.com/anusii/solidui.git"
     source: git
     version: "0.0.2"
