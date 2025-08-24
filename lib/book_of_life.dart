@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Monday 2025-08-25 09:35:08 +1000 Graham Williams>
+// Time-stamp: <Monday 2025-08-25 09:36:01 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -83,7 +83,6 @@ class BookOfLife extends StatelessWidget {
 }
 
 ////////////////////////////////////////////////////////////////////////
-
 // Define sample widgets.
 
 ////////////////////////////////////
