@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Monday 2025-08-25 09:36:01 +1000 Graham Williams>
+// Time-stamp: <Tuesday 2025-08-26 20:04:45 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -38,7 +38,7 @@ import 'package:bol/constants/app.dart';
 // 2 = Test dark/light mode.
 // 9 = My final Scaffold for the app.
 
-int useScaffold = 9;
+int useScaffold = 2;
 
 // This widget is the root of the application.
 //
@@ -61,13 +61,18 @@ class BookOfLife extends StatelessWidget {
       // This is the usual Scaffold() that we then "seemlessly" replace with
       // SolidScaffold().
       home: switch (useScaffold) {
-        0 => SolidScaffold(body: sampleChild), // #7
+        // Pretend we are a Scaafold().
+        0 => SolidScaffold(body: sampleChild),
+        // Add a menu to the Scaffold(). body/child are synonymous.
         1 => SolidScaffold(menu: sampleMenu, child: sampleChild),
+        // Add a dark.light mode button.
         2 => SolidScaffold(
-          menu: sampleMenu,
+          menu: [tapTheme, ...sampleMenu],
+          appBar: buildSampleAppBar,
           themeToggle: sampleThemeToggle,
           child: sampleChild,
         ),
+        // Bring it all together.
         9 => SolidScaffold(
           menu: sampleMenu,
           themeToggle: sampleThemeToggle,
@@ -112,11 +117,7 @@ final sampleAboutConfig = SolidAboutConfig(
 );
 
 ////////////////////////////////////
-// CHILD
-
-const sampleChild = Center(
-  child: Text('This will be the main app page.\nThe Home page.'),
-);
+// APP BAR
 
 final buildSampleAppBar = SolidAppBarConfig(
   title: appTitle,
@@ -144,32 +145,14 @@ final buildSampleAppBar = SolidAppBarConfig(
 );
 
 ////////////////////////////////////
-// DARK/LIGHT Mode
+// CHILD
 
-// TODO This should be part of SolidScaffold, not in my code.
-
-final sampleThemeToggle = SolidThemeToggleConfig(
-  enabled: true,
-  //  currentThemeMode: _currentThemeMode,
-  //  onToggleTheme: _toggleTheme,
-  showInAppBarActions: true,
-  //  hideOnVeryNarrowScreen: true,
-  tooltip: '''
-**Theme Toggle**
-
-Switch between light and dark modes for optimal viewing experience.
-
-🌙 **Dark Mode**: Better for low-light environments
-
-☀️ **Light Mode**: Better for bright environments
-
-''',
+const sampleChild = Center(
+  child: Text('Home Page', style: TextStyle(fontSize: 24)),
 );
 
 ////////////////////////////////////
 // MENU
-
-// TODO I would like to specify chid actions here, not separated somewhere else.
 
 const sampleMenu = [
   SolidMenuItem(
@@ -180,7 +163,7 @@ const sampleMenu = [
     **Home:** Tap here to return to the main page for the app.
 
     ''',
-    // child: sampleChild,
+    child: sampleChild,
   ),
   SolidMenuItem(
     icon: Icons.settings,
@@ -191,9 +174,7 @@ const sampleMenu = [
     data is managed witheth HealthPod and other apps.
 
     ''',
-    // child: Center(
-    //   child: Text('Another Page', style: TextStyle(fontSize: 24)),
-    // ),
+    child: Center(child: Text('Another Page', style: TextStyle(fontSize: 24))),
   ),
   SolidMenuItem(
     icon: Icons.person,
@@ -205,9 +186,7 @@ const sampleMenu = [
     here.
 
     ''',
-    // child: Center(
-    //   child: Text('Profile Page', style: TextStyle(fontSize: 24)),
-    // ),
+    child: Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
   ),
 ];
 
@@ -224,6 +203,34 @@ final sampleStatusBar = SolidStatusBarConfig(
     onTap: () => debugPrint('Login/Logout'),
     loggedInTooltip: 'Click to log out',
     loggedOutTooltip: 'Click to log in',
+  ),
+);
+
+////////////////////////////////////
+// THEME DARK/LIGHT Mode
+
+// TODO This should be part of SolidScaffold, not in my code.
+
+final sampleThemeToggle = SolidThemeToggleConfig(
+  enabled: true,
+  //  currentThemeMode: _currentThemeMode,
+  //  onToggleTheme: _toggleTheme,
+  showInAppBarActions: true,
+);
+
+final tapTheme = SolidMenuItem(
+  icon: Icons.star,
+  title: 'Theme',
+  tooltip: '''
+
+              **Theme:** Tap here to show a page to test the theme.
+
+              ''',
+  child: Center(
+    child: Text(
+      'Theme Button - Not Yet Working',
+      style: TextStyle(fontSize: 24),
+    ),
   ),
 );
 
