@@ -4,8 +4,8 @@
 #define MyAppName "BookOfLife"
 #define MyAppVersion "dev-windows-inno"
 #define MyAppPublisher "ANU Software Innovation Institute"
-#define MyAppURL "https://bookoflife.solidcommunity.au/"
-#define MyAppExeName "bookoflife.exe"
+#define MyAppURL "https://book_of_life.solidcommunity.au/"
+#define MyAppExeName "book_of_life.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -24,7 +24,7 @@ DisableProgramGroupPage=yes
 LicenseFile=..\LICENSE
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=installers
-OutputBaseFilename=bookoflife-{#MyAppVersion}
+OutputBaseFilename=book_of_life-{#MyAppVersion}
 SetupIconFile=..\windows\runner\resources\app_icon.ico
 Compression=lzma
 SolidCompression=yes
