@@ -29,9 +29,9 @@ import 'package:flutter/material.dart';
 
 import 'package:window_manager/window_manager.dart';
 
-import 'package:bol/book_of_life.dart';
-import 'package:bol/constants/app.dart';
-import 'package:bol/utils/is_desktop.dart';
+import 'package:book_of_life/book_of_life.dart';
+import 'package:book_of_life/constants/app.dart';
+import 'package:book_of_life/utils/is_desktop.dart';
 
 /// Main entry point for the [BookOfLife] application.
 

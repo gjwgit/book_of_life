@@ -29,7 +29,7 @@ import 'package:flutter/material.dart';
 
 import 'package:solidui/solidui.dart';
 
-import 'package:bol/constants/app.dart';
+import 'package:book_of_life/constants/app.dart';
 
 // Which sample Scaffold to use.
 //
