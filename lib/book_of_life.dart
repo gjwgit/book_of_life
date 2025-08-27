@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Tuesday 2025-08-26 20:04:45 +1000 Graham Williams>
+// Time-stamp: <Wednesday 2025-08-27 12:09:22 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -49,7 +49,7 @@ class BookOfLife extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return SolidThemeApp(
       // Turn off debug banner for now.
       debugShowCheckedModeBanner: false,
       title: appTitle,
@@ -209,12 +209,8 @@ final sampleStatusBar = SolidStatusBarConfig(
 ////////////////////////////////////
 // THEME DARK/LIGHT Mode
 
-// TODO This should be part of SolidScaffold, not in my code.
-
 final sampleThemeToggle = SolidThemeToggleConfig(
   enabled: true,
-  //  currentThemeMode: _currentThemeMode,
-  //  onToggleTheme: _toggleTheme,
   showInAppBarActions: true,
 );
 
@@ -228,7 +224,7 @@ final tapTheme = SolidMenuItem(
               ''',
   child: Center(
     child: Text(
-      'Theme Button - Not Yet Working',
+      'Theme Button will toggle between themes',
       style: TextStyle(fontSize: 24),
     ),
   ),
