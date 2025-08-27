@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 32 31.679247"
+   version="1.1"
+   id="svg687"
+   sodipodi:docname="app_icon.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   width="32"
+   height="31.679247"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview689"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.8514286"
+     inkscape:cx="51.027054"
+     inkscape:cy="18.411823"
+     inkscape:window-width="1658"
+     inkscape:window-height="1369"
+     inkscape:window-x="2034"
+     inkscape:window-y="32"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg687" />
+  <defs
+     id="defs521">
+    <!-- Gradient for DNA -->
+    <linearGradient
+       id="dnaGradient"
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="1">
+      <stop
+         offset="0%"
+         style="stop-color:#3498DB;stop-opacity:1"
+         id="stop504" />
+      <stop
+         offset="100%"
+         style="stop-color:#9B59B6;stop-opacity:1"
+         id="stop506" />
+    </linearGradient>
+    <!-- Radial gradient for crystal -->
+    <radialGradient
+       id="crystalGradient"
+       cx="0.5"
+       cy="0.5"
+       r="0.5">
+      <stop
+         offset="0%"
+         style="stop-color:#F1C40F;stop-opacity:1"
+         id="stop509" />
+      <stop
+         offset="70%"
+         style="stop-color:#E67E22;stop-opacity:1"
+         id="stop511" />
+      <stop
+         offset="100%"
+         style="stop-color:#E74C3C;stop-opacity:1"
+         id="stop513" />
+    </radialGradient>
+    <!-- Constellation gradient -->
+    <radialGradient
+       id="starGradient"
+       cx="0.5"
+       cy="0.5"
+       r="0.5">
+      <stop
+         offset="0%"
+         style="stop-color:#F39C12;stop-opacity:1"
+         id="stop516" />
+      <stop
+         offset="100%"
+         style="stop-color:#D35400;stop-opacity:1"
+         id="stop518" />
+    </radialGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#crystalGradient"
+       id="radialGradient808"
+       cx="62.574772"
+       cy="42.0191"
+       r="12.832888"
+       gradientTransform="scale(0.86296758,1.1587921)"
+       fx="62.574772"
+       fy="42.0191"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <!-- Icon 1: DNA Helix as Book Spine -->
+  <!-- Icon 2: Fingerprint to Text Lines -->
+  <!-- Icon 3: Crystal with Faceted Memories -->
+  <!-- Icon 4: Constellation Face Profile -->
+  <!-- Icon 5: Camera Aperture with Timeline -->
+  <!-- Icon 6: Origami Figure Unfolding -->
+  <!-- Featured App Icon: DNA Crystal Book -->
+  <line
+     x1="0"
+     y1="1.1792476"
+     x2="32"
+     y2="1.1792476"
+     stroke="#e9ecef"
+     stroke-width="1"
+     id="line657" />
+  <line
+     x1="0"
+     y1="6.1792479"
+     x2="27"
+     y2="6.1792479"
+     stroke="#e9ecef"
+     stroke-width="1"
+     id="line659" />
+  <line
+     x1="0"
+     y1="26.179247"
+     x2="32"
+     y2="26.179247"
+     stroke="#e9ecef"
+     stroke-width="1"
+     id="line661" />
+  <line
+     x1="0"
+     y1="31.179247"
+     x2="27"
+     y2="31.179247"
+     stroke="#e9ecef"
+     stroke-width="1"
+     id="line663" />
+  <polygon
+     points="44,50 46,40 54,35 62,40 64,50 54,62 "
+     fill="url(#crystalGradient)"
+     stroke="#e67e22"
+     stroke-width="2"
+     opacity="0.9"
+     id="polygon665"
+     style="fill:url(#radialGradient808)"
+     transform="translate(-38,-33.820752)" />
+  <path
+     d="m 9,6.1792476 q 3,4.0000004 0,8.0000004 -3,4 0,8 3,4 0,6"
+     stroke="#3498db"
+     stroke-width="2"
+     fill="none"
+     opacity="0.8"
+     id="path667" />
+  <path
+     d="m 23,6.1792476 q -3,4.0000004 0,8.0000004 3,4 0,8 -3,4 0,6"
+     stroke="#9b59b6"
+     stroke-width="2"
+     fill="none"
+     opacity="0.8"
+     id="path669" />
+  <line
+     x1="9"
+     y1="10.179248"
+     x2="23"
+     y2="10.179248"
+     stroke="#ecf0f1"
+     stroke-width="1"
+     opacity="0.7"
+     id="line671" />
+  <line
+     x1="9"
+     y1="18.179247"
+     x2="23"
+     y2="18.179247"
+     stroke="#ecf0f1"
+     stroke-width="1"
+     opacity="0.7"
+     id="line673" />
+  <line
+     x1="9"
+     y1="24.179247"
+     x2="23"
+     y2="24.179247"
+     stroke="#ecf0f1"
+     stroke-width="1"
+     opacity="0.7"
+     id="line675" />
+  <circle
+     cx="10"
+     cy="3.1792476"
+     r="1"
+     fill="#f1c40f"
+     id="circle677" />
+  <circle
+     cx="22"
+     cy="5.1792479"
+     r="1"
+     fill="#f1c40f"
+     id="circle679" />
+  <circle
+     cx="7"
+     cy="18.179247"
+     r="1"
+     fill="#f1c40f"
+     id="circle681" />
+  <circle
+     cx="25"
+     cy="20.179247"
+     r="1"
+     fill="#f1c40f"
+     id="circle683" />
+</svg>

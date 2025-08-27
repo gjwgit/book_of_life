@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Wednesday 2025-08-27 12:09:22 +1000 Graham Williams>
+// Time-stamp: <Wednesday 2025-08-27 12:31:27 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -38,7 +38,7 @@ import 'package:bol/constants/app.dart';
 // 2 = Test dark/light mode.
 // 9 = My final Scaffold for the app.
 
-int useScaffold = 2;
+int useScaffold = 9;
 
 // This widget is the root of the application.
 //
