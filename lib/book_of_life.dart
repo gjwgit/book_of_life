@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Wednesday 2025-08-27 12:31:27 +1000 Graham Williams>
+// Time-stamp: <Wednesday 2025-08-27 13:04:40 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -95,8 +95,12 @@ class BookOfLife extends StatelessWidget {
 
 final sampleAboutConfig = SolidAboutConfig(
   applicationName: appTitle.split(' - ')[0],
-  applicationIcon: Icon(Icons.apps, size: 64),
-  applicationLegalese: '''© 2025 My Company''',
+  applicationIcon: Image.asset(
+    'assets/images/app_icon.png',
+    width: 64, // Adjust size as needed
+    height: 64,
+  ),
+  applicationLegalese: '''© 2025 Togaware Pty Ltd''',
   text: '''
 
   Your book of life is written by you. This app provides support for you to do
