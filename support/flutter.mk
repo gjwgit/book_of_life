@@ -210,7 +210,7 @@ locmax:
 	' _ {} \; | sort -nr); \
 	if [ -n "$$output" ]; then \
 		echo "$$output"; \
-		echo "$(CROSS) Error: Files with more than $(LINES) lines found"; \
+		echo "\n$(CROSS) Error: Files with more than $(LINES) lines found"; \
 		exit 1; \
 	else \
 		echo "$(TICK) All files are under $(LINES) lines"; \
@@ -260,7 +260,7 @@ todo:
 .PHONY: license
 license:
 	@echo "Files without a LICENSE:\n"
-	@-output=$$(find lib -type f -not -name '*~' -not -name 'README*' \
+	@-output=$$(find lib -type f -not -name '*~' -not -name 'README*' -not -name '*.g.dart' \
 	! -exec grep -qE '^(/// Copyright|/// Licensed)' {} \; -print | xargs printf "\t%s\n"); \
 	if [ $$(echo "$$output" | wc -w) -ne 0 ]; then \
 		echo "$$output"; \
