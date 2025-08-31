@@ -228,10 +228,12 @@ packages:
   dart_code_metrics:
     dependency: "direct dev"
     description:
-      path: "/home/gjw/git/github/gjwgit/dart-code-metrics"
-      relative: false
-    source: path
-    version: "5.7.6"
+      path: "."
+      ref: dev
+      resolved-ref: "6bbe3d1f8584c0a57220b1916f311021a536a354"
+      url: "https://github.com/gjwgit/dart-code-metrics"
+    source: git
+    version: "6.0.0"
   dart_code_metrics_presets:
     dependency: transitive
     description:

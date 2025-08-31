@@ -33,7 +33,6 @@ dev_dependencies:
     git:
       url: https://github.com/gjwgit/dart-code-metrics
       ref: dev
-#    path: /home/gjw/git/github/gjwgit/dart-code-metrics
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^6.0.0
 

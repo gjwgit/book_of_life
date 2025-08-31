@@ -73,8 +73,6 @@ export FLUTTER_HELP
 help::
 	@echo "$$FLUTTER_HELP"
 
-GREEN='\033[0;32m'
-NC='\033[0m' # No Color
 TICK=\033[0;32m✔\033[0m
 CROSS=\033[31m❌\033[0m
 
@@ -262,8 +260,15 @@ todo:
 .PHONY: license
 license:
 	@echo "Files without a LICENSE:\n"
-	@-find lib -type f -not -name '*~' -not -name 'README*' \
-	! -exec grep -qE '^(/// Copyright|/// Licensed)' {} \; -print | xargs printf "\t%s\n"
+	@-output=$$(find lib -type f -not -name '*~' -not -name 'README*' \
+	! -exec grep -qE '^(/// Copyright|/// Licensed)' {} \; -print | xargs printf "\t%s\n"); \
+	if [ $$(echo "$$output" | wc -w) -ne 0 ]; then \
+		echo "$$output"; \
+		echo "\n$(CROSS) Error: Files with no license found."; \
+		exit 1; \
+	else \
+		echo "$(TICK) All source files contain a license."; \
+	fi
 	@echo $(SEPARATOR)
 
 .PHONY: riverpod
