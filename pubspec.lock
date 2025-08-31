@@ -922,8 +922,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "tony/9_theme_mode"
-      resolved-ref: "67a56a694d9c654929bbba19d49a3ea79233b802"
+      ref: dev
+      resolved-ref: ccc6f729953ded785d6efd04d214ee3e8a43f893
       url: "https://github.com/anusii/solidui.git"
     source: git
     version: "0.0.2"

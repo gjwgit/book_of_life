@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-08-31 06:45:06 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-08-31 12:52:19 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -188,6 +188,16 @@ const sampleMenu = [
 
     ''',
     child: Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
+  ),
+  SolidMenuItem(
+    icon: Icons.broadcast_on_home,
+    title: 'Files',
+    tooltip: '''
+
+    **Files:** Tap here to browse the files on your POD.
+
+    ''',
+    child: SolidFile(basePath: ''),
   ),
 ];
 
