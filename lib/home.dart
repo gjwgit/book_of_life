@@ -1,6 +1,6 @@
 /// Book of Life - The application's home page.
 ///
-// Time-stamp: <Sunday 2025-08-17 14:57:16 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-08-31 06:46:56 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -39,6 +39,6 @@ class AppHomePage extends StatefulWidget {
 class _AppHomePageState extends State<AppHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Text(widget.title);
+    return Center(child: Text(widget.title, style: TextStyle(fontSize: 24)));
   }
 }

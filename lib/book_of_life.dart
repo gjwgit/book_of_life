@@ -1,6 +1,6 @@
 /// Book of Life - The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Wednesday 2025-08-27 13:04:40 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-08-31 06:45:06 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -30,6 +30,7 @@ import 'package:flutter/material.dart';
 import 'package:solidui/solidui.dart';
 
 import 'package:book_of_life/constants/app.dart';
+import 'package:book_of_life/home.dart';
 
 // Which sample Scaffold to use.
 //
@@ -62,15 +63,18 @@ class BookOfLife extends StatelessWidget {
       // SolidScaffold().
       home: switch (useScaffold) {
         // Pretend we are a Scaafold().
-        0 => SolidScaffold(body: sampleChild),
+        0 => SolidScaffold(body: AppHomePage(title: appTitle)),
         // Add a menu to the Scaffold(). body/child are synonymous.
-        1 => SolidScaffold(menu: sampleMenu, child: sampleChild),
+        1 => SolidScaffold(
+          menu: sampleMenu,
+          child: AppHomePage(title: appTitle),
+        ),
         // Add a dark.light mode button.
         2 => SolidScaffold(
           menu: [tapTheme, ...sampleMenu],
           appBar: buildSampleAppBar,
           themeToggle: sampleThemeToggle,
-          child: sampleChild,
+          child: AppHomePage(title: appTitle),
         ),
         // Bring it all together.
         9 => SolidScaffold(
@@ -79,9 +83,9 @@ class BookOfLife extends StatelessWidget {
           appBar: buildSampleAppBar,
           statusBar: sampleStatusBar,
           aboutConfig: sampleAboutConfig,
-          child: sampleChild,
+          child: AppHomePage(title: appTitle),
         ),
-        _ => Scaffold(body: sampleChild),
+        _ => Scaffold(body: AppHomePage(title: appTitle)),
       },
     );
   }
@@ -149,13 +153,6 @@ final buildSampleAppBar = SolidAppBarConfig(
 );
 
 ////////////////////////////////////
-// CHILD
-
-const sampleChild = Center(
-  child: Text('Home Page', style: TextStyle(fontSize: 24)),
-);
-
-////////////////////////////////////
 // MENU
 
 const sampleMenu = [
@@ -167,7 +164,7 @@ const sampleMenu = [
     **Home:** Tap here to return to the main page for the app.
 
     ''',
-    child: sampleChild,
+    child: AppHomePage(title: appTitle),
   ),
   SolidMenuItem(
     icon: Icons.settings,
