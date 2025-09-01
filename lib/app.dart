@@ -1,6 +1,6 @@
-/// Book of Life - The primary [MaterialApp] widget.
+/// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-08-31 12:52:19 +1000 Graham Williams>
+// Time-stamp: <Monday 2025-09-01 15:13:20 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -29,24 +29,13 @@ import 'package:flutter/material.dart';
 
 import 'package:solidui/solidui.dart';
 
-import 'package:book_of_life/constants/app.dart';
-import 'package:book_of_life/home.dart';
-
-// Which sample Scaffold to use.
-//
-// 0 = Just a basic Text widget within a standard Scaffold.
-// 1 = Test floating menu with narrow screen.
-// 2 = Test dark/light mode.
-// 9 = My final Scaffold for the app.
-
-int useScaffold = 9;
+import 'constants/app.dart';
+import 'home.dart';
 
 // This widget is the root of the application.
-//
-// To support the darl.light theme this needs to be a StatefulWidget?
 
-class BookOfLife extends StatelessWidget {
-  const BookOfLife({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,32 +50,14 @@ class BookOfLife extends StatelessWidget {
 
       // This is the usual Scaffold() that we then "seemlessly" replace with
       // SolidScaffold().
-      home: switch (useScaffold) {
-        // Pretend we are a Scaafold().
-        0 => SolidScaffold(body: AppHomePage(title: appTitle)),
-        // Add a menu to the Scaffold(). body/child are synonymous.
-        1 => SolidScaffold(
-          menu: sampleMenu,
-          child: AppHomePage(title: appTitle),
-        ),
-        // Add a dark.light mode button.
-        2 => SolidScaffold(
-          menu: [tapTheme, ...sampleMenu],
-          appBar: buildSampleAppBar,
-          themeToggle: sampleThemeToggle,
-          child: AppHomePage(title: appTitle),
-        ),
-        // Bring it all together.
-        9 => SolidScaffold(
-          menu: sampleMenu,
-          themeToggle: sampleThemeToggle,
-          appBar: buildSampleAppBar,
-          statusBar: sampleStatusBar,
-          aboutConfig: sampleAboutConfig,
-          child: AppHomePage(title: appTitle),
-        ),
-        _ => Scaffold(body: AppHomePage(title: appTitle)),
-      },
+      home: SolidScaffold(
+        menu: sampleMenu,
+        themeToggle: sampleThemeToggle,
+        appBar: buildSampleAppBar,
+        statusBar: sampleStatusBar,
+        aboutConfig: sampleAboutConfig,
+        child: AppHomePage(title: appTitle),
+      ),
     );
   }
 }
@@ -167,6 +138,16 @@ const sampleMenu = [
     child: AppHomePage(title: appTitle),
   ),
   SolidMenuItem(
+    icon: Icons.broadcast_on_home,
+    title: 'Files',
+    tooltip: '''
+
+    **Files:** Tap here to browse the files on your POD.
+
+    ''',
+    child: SolidFile(basePath: ''),
+  ),
+  SolidMenuItem(
     icon: Icons.settings,
     title: 'Health',
     tooltip: '''
@@ -188,16 +169,6 @@ const sampleMenu = [
 
     ''',
     child: Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
-  ),
-  SolidMenuItem(
-    icon: Icons.broadcast_on_home,
-    title: 'Files',
-    tooltip: '''
-
-    **Files:** Tap here to browse the files on your POD.
-
-    ''',
-    child: SolidFile(basePath: ''),
   ),
 ];
 

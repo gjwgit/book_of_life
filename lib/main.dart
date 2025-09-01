@@ -1,6 +1,6 @@
 /// Book of Life - Define the main entry point for the app.
 ///
-// Time-stamp: <Wednesday 2025-08-20 15:21:01 +1000 Graham Williams>
+// Time-stamp: <Monday 2025-09-01 15:15:25 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -29,7 +29,7 @@ import 'package:flutter/material.dart';
 
 import 'package:window_manager/window_manager.dart';
 
-import 'package:book_of_life/book_of_life.dart';
+import 'package:book_of_life/app.dart';
 import 'package:book_of_life/constants/app.dart';
 import 'package:book_of_life/utils/is_desktop.dart';
 
@@ -57,5 +57,5 @@ void main() async {
   // The runApp() function takes the given Widget and makes it the root of the
   // widget tree.
 
-  runApp(BookOfLife());
+  runApp(App());
 }
