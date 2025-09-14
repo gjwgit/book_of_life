@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Monday 2025-09-01 15:13:20 +1000 Graham Williams>
+// Time-stamp: <Sunday 2025-09-14 10:17:57 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -194,22 +194,6 @@ final sampleStatusBar = SolidStatusBarConfig(
 final sampleThemeToggle = SolidThemeToggleConfig(
   enabled: true,
   showInAppBarActions: true,
-);
-
-final tapTheme = SolidMenuItem(
-  icon: Icons.star,
-  title: 'Theme',
-  tooltip: '''
-
-              **Theme:** Tap here to show a page to test the theme.
-
-              ''',
-  child: Center(
-    child: Text(
-      'Theme Button will toggle between themes',
-      style: TextStyle(fontSize: 24),
-    ),
-  ),
 );
 
 ////////////////////////////////////
