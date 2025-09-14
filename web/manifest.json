@@ -1,6 +1,6 @@
 {
-    "name": "bol",
-    "short_name": "bol",
+    "name": "bookoflife",
+    "short_name": "bookoflife",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#ffffff",

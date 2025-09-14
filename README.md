@@ -1,4 +1,4 @@
-# Your Book of Life - bol
+# Your Book of Life
 
 The book of life was conceived by the chief of the U.S. National
 Office of Vital Statistics, Dr. Halbert L. Dunn 1946 together with the

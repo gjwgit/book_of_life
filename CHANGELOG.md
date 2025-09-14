@@ -7,22 +7,22 @@ description of the update. Updates in the 0.0.n series are heading
 toward a 0.1 release. The `[version timestamp user]` string is
 utilised by the flutter version_widget package.
 
-Run the app online: [**web**](https://bol.solidcommunity.au).
+Run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
 Download the latest version:
 GNU/Linux
-[**deb**](https://solidcommunity.au/installers/bol_amd64.deb) or
-[**zip**](https://solidcommunity.au/installers/bol-dev-linux.zip) -
+[**deb**](https://solidcommunity.au/installers/bookoflife_amd64.deb) or
+[**zip**](https://solidcommunity.au/installers/bookoflife-dev-linux.zip) -
 Android
-[**apk**](https://solidcommunity.au/installers/bol.apk) -
+[**apk**](https://solidcommunity.au/installers/bookoflife.apk) -
 macOS
-[**zip**](https://solidcommunity.au/installers/bol-dev-macos.zip) -
+[**zip**](https://solidcommunity.au/installers/bookoflife-dev-macos.zip) -
 Windows
-[**zip**](https://solidcommunity.au/installers/bol-dev-windows.zip) or
-[**inno**](https://solidcommunity.au/installers/bol-dev-windows-inno.exe).
+[**zip**](https://solidcommunity.au/installers/bookoflife-dev-windows.zip) or
+[**inno**](https://solidcommunity.au/installers/bookoflife-dev-windows-inno.exe).
 
 Coding documentation is available from [solid community
-au](https://solidcommunity.au/docs/bol)
+au](https://solidcommunity.au/docs/bookoflife)
 
 ## 0.1 First beta release
 

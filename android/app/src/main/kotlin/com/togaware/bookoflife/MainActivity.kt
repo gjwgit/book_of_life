@@ -1,4 +1,4 @@
-package com.togaware.bol
+package com.togaware.bookoflife
 
 import io.flutter.embedding.android.FlutterActivity
 
