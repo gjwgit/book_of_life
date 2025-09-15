@@ -1,6 +1,6 @@
 /// Book of Life - Your Life's Data Secured in One Place
 ///
-// Time-stamp: <Friday 2025-08-15 08:54:51 +1000 Graham Williams>
+// Time-stamp: <Tuesday 2025-09-16 08:13:54 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU
 ///
@@ -22,5 +22,8 @@
 // this program.  If not, see <https://www.gnu.org/licenses/>.
 ///
 /// Authors: AUTHORS
+
+// Add the library directive as we have doc entries above. We publish the above
+// meta doc lines in the docs.
 
 library;

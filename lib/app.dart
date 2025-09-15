@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-09-14 10:17:57 +1000 Graham Williams>
+// Time-stamp: <Tuesday 2025-09-16 08:11:21 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -20,7 +20,7 @@
 //
 // You should have received a copy of the GNU General Public License along with
 // this program.  If not, see <https://www.gnu.org/licenses/>.
-///
+//
 /// Authors: Graham Williams
 
 library;
@@ -62,10 +62,8 @@ class App extends StatelessWidget {
   }
 }
 
-////////////////////////////////////////////////////////////////////////
 // Define sample widgets.
 
-////////////////////////////////////
 // ABOUT
 
 final sampleAboutConfig = SolidAboutConfig(
@@ -95,7 +93,6 @@ final sampleAboutConfig = SolidAboutConfig(
 ''',
 );
 
-////////////////////////////////////
 // APP BAR
 
 final buildSampleAppBar = SolidAppBarConfig(
@@ -123,7 +120,6 @@ final buildSampleAppBar = SolidAppBarConfig(
   versionConfig: buildSampleVersion,
 );
 
-////////////////////////////////////
 // MENU
 
 const sampleMenu = [
@@ -172,8 +168,7 @@ const sampleMenu = [
   ),
 ];
 
-////////////////////////////////////
-// STATUS BAR
+/// STATUS BAR
 
 final sampleStatusBar = SolidStatusBarConfig(
   serverInfo: SolidServerInfo(
@@ -188,16 +183,14 @@ final sampleStatusBar = SolidStatusBarConfig(
   ),
 );
 
-////////////////////////////////////
-// THEME DARK/LIGHT Mode
+/// THEME DARK/LIGHT Mode
 
 final sampleThemeToggle = SolidThemeToggleConfig(
   enabled: true,
   showInAppBarActions: true,
 );
 
-////////////////////////////////////
-// VERSION
+/// VERSION
 
 final buildSampleVersion = SolidVersionConfig(
   changelogUrl:
