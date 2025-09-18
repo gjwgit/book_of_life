@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Tuesday 2025-09-16 08:56:11 +1000 Graham Williams>
+// Time-stamp: <Friday 2025-09-19 08:15:16 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -52,10 +52,10 @@ class App extends StatelessWidget {
       // SolidScaffold().
       home: SolidScaffold(
         menu: sampleMenu,
-        themeToggle: sampleThemeToggle,
         appBar: buildSampleAppBar,
         statusBar: sampleStatusBar,
         aboutConfig: sampleAboutConfig,
+        themeToggle: sampleThemeToggle,
         child: AppHomePage(title: appTitle),
       ),
     );
@@ -96,28 +96,28 @@ final sampleAboutConfig = SolidAboutConfig(
 // APP BAR
 
 final buildSampleAppBar = SolidAppBarConfig(
-  title: appTitle,
-  actions: [
-    SolidAppBarAction(
-      icon: Icons.search,
-      onPressed: () => debugPrint('Search'),
-      tooltip: 'Search',
-    ),
-    SolidAppBarAction(
-      icon: Icons.notifications,
-      onPressed: () => debugPrint('Notifications'),
-      tooltip: 'Notifications',
-    ),
-  ],
-  overflowItems: [
-    SolidOverflowMenuItem(
-      id: 'help',
-      icon: Icons.help,
-      label: 'Help',
-      onSelected: () => debugPrint('Help'),
-    ),
-  ],
+  title: appTitle.split('-')[0],
   versionConfig: buildSampleVersion,
+  // actions: [
+  //   SolidAppBarAction(
+  //     icon: Icons.search,
+  //     onPressed: () => debugPrint('Search'),
+  //     tooltip: 'Search',
+  //   ),
+  //   SolidAppBarAction(
+  //     icon: Icons.notifications,
+  //     onPressed: () => debugPrint('Notifications'),
+  //     tooltip: 'Notifications',
+  //   ),
+  // ],
+  // overflowItems: [
+  //   SolidOverflowMenuItem(
+  //     id: 'help',
+  //     icon: Icons.help,
+  //     label: 'Help',
+  //     onSelected: () => debugPrint('Help'),
+  //   ),
+  // ],
 );
 
 // MENU
@@ -134,7 +134,7 @@ const sampleMenu = [
     child: AppHomePage(title: appTitle),
   ),
   SolidMenuItem(
-    icon: Icons.broadcast_on_home,
+    icon: Icons.folder,
     title: 'Files',
     tooltip: '''
 
@@ -144,8 +144,8 @@ const sampleMenu = [
     child: SolidFile(basePath: ''),
   ),
   SolidMenuItem(
-    icon: Icons.settings,
-    title: 'Health',
+    icon: Icons.headphones,
+    title: 'Music',
     tooltip: '''
 
     **Health:** Tap here for a summary of your health. You main health
@@ -155,7 +155,7 @@ const sampleMenu = [
     child: Center(child: Text('Another Page', style: TextStyle(fontSize: 24))),
   ),
   SolidMenuItem(
-    icon: Icons.person,
+    icon: Icons.interpreter_mode,
     title: 'Interests',
     tooltip: '''
 
