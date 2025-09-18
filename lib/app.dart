@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Tuesday 2025-09-16 08:11:21 +1000 Graham Williams>
+// Time-stamp: <Tuesday 2025-09-16 08:56:11 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -20,7 +20,7 @@
 //
 // You should have received a copy of the GNU General Public License along with
 // this program.  If not, see <https://www.gnu.org/licenses/>.
-//
+///
 /// Authors: Graham Williams
 
 library;
