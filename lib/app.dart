@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Friday 2025-09-19 08:15:16 +1000 Graham Williams>
+// Time-stamp: <Friday 2025-09-19 09:31:14 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -176,10 +176,16 @@ final sampleStatusBar = SolidStatusBarConfig(
     tooltip: 'Server status',
   ),
   loginStatus: SolidLoginStatus(
-    webId: 'user@example.com',
+    //    webId: 'user@example.com',
     onTap: () => debugPrint('Login/Logout'),
-    loggedInTooltip: 'Click to log out',
-    loggedOutTooltip: 'Click to log in',
+    // TODO 20250919 gjw  SHOULD COME FROM SOLIDUI AND HAVE A DEFAULT
+    // onTap: () => handleLogout(context),
+    //loggedInTooltip: 'Click to log out',
+    //loggedOutTooltip: 'Click to log in',
+  ),
+  securityKeyStatus: SolidSecurityKeyStatus(
+    //  isKeySaved: true,
+    //    onKeyStatusChanged: () {},
   ),
 );
 

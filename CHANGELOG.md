@@ -26,7 +26,8 @@ au](https://solidcommunity.au/docs/bookoflife)
 
 ## 0.1 First beta release
 
-+ Added them button [0.0.4 20250827 gjw]
++ Added SolidFiles widget [0.0.5 20250920 gjw]
++ Added theme button [0.0.4 20250827 gjw]
 + Extract version from pubspec [0.0.3 20250820 gjw]
 + Test SolidScaffold functionality [0.0.2 20250820 gjw]
 + Initialise the app [0.0.1 20250818 gjw]
