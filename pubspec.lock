@@ -872,9 +872,11 @@ packages:
   solidui:
     dependency: "direct main"
     description:
-      path: "/home/gjw/git/github/anusii/solidui"
-      relative: false
-    source: path
+      path: "."
+      ref: dev
+      resolved-ref: a8bc3ce9a6f5f1c95badd086be4c76426b62ed3e
+      url: "https://github.com/anusii/solidui.git"
+    source: git
     version: "0.0.2"
   source_span:
     dependency: transitive
