@@ -12,7 +12,7 @@ on:
       - dev
 
 env:
-  APP: book_of_life
+  APP: bookoflife
   LINUX_PKGS: libsecret-1-dev
   FLUTTER_VERSION: '3.35.3'
 
