@@ -9,4 +9,4 @@ individual's data privately and securely.
 
 The current app itself serves as a simple demonstration of quickly
 pulling together an app using the SolidScaffold() widget from the
-solidui pacakge.
+solidui package.

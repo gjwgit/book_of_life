@@ -4,8 +4,8 @@
 #define MyAppName "BookOfLife"
 #define MyAppVersion "dev-windows-inno"
 #define MyAppPublisher "Togaware Pty Ltd"
-#define MyAppURL "https://github.com/gjwgit/book_of_life/"
-#define MyAppExeName "book_of_life.exe"
+#define MyAppURL "https://github.com/gjwgit/bookoflife/"
+#define MyAppExeName "bookoflife.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -38,7 +38,7 @@ LicenseFile=..\LICENSE
 ;
 PrivilegesRequiredOverridesAllowed=commandline
 OutputDir=installers
-OutputBaseFilename=book_of_life-{#MyAppVersion}
+OutputBaseFilename=bookoflife-{#MyAppVersion}
 SetupIconFile=..\windows\runner\resources\app_icon.ico
 Compression=lzma
 SolidCompression=yes
