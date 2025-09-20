@@ -1,6 +1,6 @@
 /// Book of Life - Define the main entry point for the app.
 ///
-// Time-stamp: <Monday 2025-09-01 15:15:25 +1000 Graham Williams>
+// Time-stamp: <Saturday 2025-09-20 21:01:48 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -29,9 +29,9 @@ import 'package:flutter/material.dart';
 
 import 'package:window_manager/window_manager.dart';
 
-import 'package:book_of_life/app.dart';
-import 'package:book_of_life/constants/app.dart';
-import 'package:book_of_life/utils/is_desktop.dart';
+import 'package:bookoflife/app.dart';
+import 'package:bookoflife/constants/app.dart';
+import 'package:bookoflife/utils/is_desktop.dart';
 
 /// Main entry point for the [BookOfLife] application.
 
