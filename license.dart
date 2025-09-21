@@ -2,7 +2,7 @@
 ///
 // Time-stamp: <Wednesday 2025-09-17 09:19:18 +1000 Graham Williams>
 ///
-/// Copyright (C) 2025, Software Innovation Institute ANU
+/// Copyright (C) 2025, Togaware Pty Ltd
 ///
 /// Licensed under the GNU General Public License, Version 3 (the "License");
 ///
