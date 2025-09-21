@@ -1,8 +1,8 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
+Name=BookOfLife
 Version=1.0
 Terminal=false
 Type=Application
-Name=BookOfLife
 Exec=.local/bin/bookoflife
 Icon=/home/USER/.local/share/icons/hicolor/256x256/apps/bookoflife.png
