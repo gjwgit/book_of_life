@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Friday 2025-09-19 09:31:14 +1000 Graham Williams>
+// Time-stamp: <Tuesday 2025-09-23 12:34:14 +1000 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -51,156 +51,147 @@ class App extends StatelessWidget {
       // This is the usual Scaffold() that we then "seemlessly" replace with
       // SolidScaffold().
       home: SolidScaffold(
-        menu: sampleMenu,
-        appBar: buildSampleAppBar,
-        statusBar: sampleStatusBar,
-        aboutConfig: sampleAboutConfig,
-        themeToggle: sampleThemeToggle,
+        // MENU
+        menu: [
+          SolidMenuItem(
+            icon: Icons.home,
+            title: 'Home',
+            tooltip: '''
+
+            **Home:** Tap here to return to the main page for the app.
+
+            ''',
+            child: AppHomePage(title: appTitle),
+          ),
+          SolidMenuItem(
+            icon: Icons.folder,
+            title: 'Files',
+            tooltip: '''
+
+            **Files:** Tap here to browse the files on your POD.
+
+            ''',
+            child: SolidFile(basePath: ''),
+          ),
+          SolidMenuItem(
+            icon: Icons.headphones,
+            title: 'Music',
+            tooltip: '''
+
+            **Health:** Tap here for a summary of your health. You main health
+            data is managed witheth HealthPod and other apps.
+
+            ''',
+            child: Center(
+              child: Text('Another Page', style: TextStyle(fontSize: 24)),
+            ),
+          ),
+          SolidMenuItem(
+            icon: Icons.interpreter_mode,
+            title: 'Interests',
+            tooltip: '''
+
+            **Interests:** Tap here to access your life interests. You Movie
+            interests are managed by the MovieStar app but you get a summary
+            here.
+
+            ''',
+            child: Center(
+              child: Text('Profile Page', style: TextStyle(fontSize: 24)),
+            ),
+          ),
+        ],
+
+        // APP BAR
+        appBar: SolidAppBarConfig(
+          title: appTitle.split('-')[0],
+
+          // VERSION
+          versionConfig: SolidVersionConfig(
+            changelogUrl:
+                'https://github.com/gjwgit/book_of_life/blob/dev/'
+                'CHANGELOG.md',
+            showDate: true,
+          ),
+
+          // actions: [
+          //   SolidAppBarAction(
+          //     icon: Icons.search,
+          //     onPressed: () => debugPrint('Search'),
+          //     tooltip: 'Search',
+          //   ),
+          //   SolidAppBarAction(
+          //     icon: Icons.notifications,
+          //     onPressed: () => debugPrint('Notifications'),
+          //     tooltip: 'Notifications',
+          //   ),
+          // ],
+          // overflowItems: [
+          //   SolidOverflowMenuItem(
+          //     id: 'help',
+          //     icon: Icons.help,
+          //     label: 'Help',
+          //     onSelected: () => debugPrint('Help'),
+          //   ),
+          // ],
+        ),
+
+        // STATUS BAR
+        statusBar: SolidStatusBarConfig(
+          serverInfo: SolidServerInfo(
+            serverUri: 'https://pods.solidcommunity.au',
+            tooltip: 'Server status',
+          ),
+          loginStatus: SolidLoginStatus(
+            //    webId: 'user@example.com',
+            onTap: () => debugPrint('Login/Logout'),
+            // TODO 20250919 gjw  SHOULD COME FROM SOLIDUI AND HAVE A DEFAULT
+            // onTap: () => handleLogout(context),
+            //loggedInTooltip: 'Click to log out',
+            //loggedOutTooltip: 'Click to log in',
+          ),
+          securityKeyStatus: SolidSecurityKeyStatus(
+            //  isKeySaved: true,
+            //    onKeyStatusChanged: () {},
+          ),
+        ),
+
+        // ABOUT
+        aboutConfig: SolidAboutConfig(
+          applicationName: appTitle.split(' - ')[0],
+          applicationIcon: Image.asset(
+            'assets/images/app_icon.png',
+            width: 64, // Adjust size as needed
+            height: 64,
+          ),
+          applicationLegalese: '''© 2025 Togaware Pty Ltd''',
+          text: '''
+
+          Your book of life is written by you. This app provides support for you to do
+          just that, while retaining all your data encrypted and secure on a Solid
+          server of your choice.
+
+          **Features:**
+
+          • Your important numbers are stored here and available whereever your are.
+
+          • Your health data can be populated here and shared with your doctor.
+
+          • All data is stored encrypted as a POD on a Solid Server of your choice.
+
+          For more information, visit [github](https://github.com/gjwgit/book_of_life).
+
+          ''',
+        ),
+
+        // THEME DARK/LIGHT Mode
+        themeToggle: SolidThemeToggleConfig(
+          enabled: true,
+          showInAppBarActions: true,
+        ),
+
         child: AppHomePage(title: appTitle),
       ),
     );
   }
 }
-
-// Define sample widgets.
-
-// ABOUT
-
-final sampleAboutConfig = SolidAboutConfig(
-  applicationName: appTitle.split(' - ')[0],
-  applicationIcon: Image.asset(
-    'assets/images/app_icon.png',
-    width: 64, // Adjust size as needed
-    height: 64,
-  ),
-  applicationLegalese: '''© 2025 Togaware Pty Ltd''',
-  text: '''
-
-  Your book of life is written by you. This app provides support for you to do
-  just that, while retaining all your data encrypted and secure on a Solid
-  server of your choice.
-
-  **Features:**
-
-  • Your important numbers are stored here and available whereever your are.
-
-  • Your health data can be populated here and shared with your doctor.
-
-  • All data is stored encrypted as a POD on a Solid Server of your choice.
-
-  For more information, visit [github](https://github.com/gjwgit/book_of_life).
-
-''',
-);
-
-// APP BAR
-
-final buildSampleAppBar = SolidAppBarConfig(
-  title: appTitle.split('-')[0],
-  versionConfig: buildSampleVersion,
-  // actions: [
-  //   SolidAppBarAction(
-  //     icon: Icons.search,
-  //     onPressed: () => debugPrint('Search'),
-  //     tooltip: 'Search',
-  //   ),
-  //   SolidAppBarAction(
-  //     icon: Icons.notifications,
-  //     onPressed: () => debugPrint('Notifications'),
-  //     tooltip: 'Notifications',
-  //   ),
-  // ],
-  // overflowItems: [
-  //   SolidOverflowMenuItem(
-  //     id: 'help',
-  //     icon: Icons.help,
-  //     label: 'Help',
-  //     onSelected: () => debugPrint('Help'),
-  //   ),
-  // ],
-);
-
-// MENU
-
-const sampleMenu = [
-  SolidMenuItem(
-    icon: Icons.home,
-    title: 'Home',
-    tooltip: '''
-
-    **Home:** Tap here to return to the main page for the app.
-
-    ''',
-    child: AppHomePage(title: appTitle),
-  ),
-  SolidMenuItem(
-    icon: Icons.folder,
-    title: 'Files',
-    tooltip: '''
-
-    **Files:** Tap here to browse the files on your POD.
-
-    ''',
-    child: SolidFile(basePath: ''),
-  ),
-  SolidMenuItem(
-    icon: Icons.headphones,
-    title: 'Music',
-    tooltip: '''
-
-    **Health:** Tap here for a summary of your health. You main health
-    data is managed witheth HealthPod and other apps.
-
-    ''',
-    child: Center(child: Text('Another Page', style: TextStyle(fontSize: 24))),
-  ),
-  SolidMenuItem(
-    icon: Icons.interpreter_mode,
-    title: 'Interests',
-    tooltip: '''
-
-    **Interests:** Tap here to access your life interests. You Movie
-    interests are managed by the MovieStar app but you get a summary
-    here.
-
-    ''',
-    child: Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
-  ),
-];
-
-/// STATUS BAR
-
-final sampleStatusBar = SolidStatusBarConfig(
-  serverInfo: SolidServerInfo(
-    serverUri: 'https://pods.solidcommunity.au',
-    tooltip: 'Server status',
-  ),
-  loginStatus: SolidLoginStatus(
-    //    webId: 'user@example.com',
-    onTap: () => debugPrint('Login/Logout'),
-    // TODO 20250919 gjw  SHOULD COME FROM SOLIDUI AND HAVE A DEFAULT
-    // onTap: () => handleLogout(context),
-    //loggedInTooltip: 'Click to log out',
-    //loggedOutTooltip: 'Click to log in',
-  ),
-  securityKeyStatus: SolidSecurityKeyStatus(
-    //  isKeySaved: true,
-    //    onKeyStatusChanged: () {},
-  ),
-);
-
-/// THEME DARK/LIGHT Mode
-
-final sampleThemeToggle = SolidThemeToggleConfig(
-  enabled: true,
-  showInAppBarActions: true,
-);
-
-/// VERSION
-
-final buildSampleVersion = SolidVersionConfig(
-  changelogUrl:
-      'https://github.com/gjwgit/book_of_life/blob/dev/'
-      'CHANGELOG.md',
-  showDate: true,
-);
