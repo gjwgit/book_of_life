@@ -39,6 +39,8 @@ class AppHomePage extends StatefulWidget {
 class _AppHomePageState extends State<AppHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text(widget.title, style: TextStyle(fontSize: 24)));
+    return Center(
+      child: Text(widget.title, style: const TextStyle(fontSize: 24)),
+    );
   }
 }

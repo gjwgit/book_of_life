@@ -53,7 +53,7 @@ class App extends StatelessWidget {
       home: SolidScaffold(
         // MENU
         menu: [
-          SolidMenuItem(
+          const SolidMenuItem(
             icon: Icons.home,
             title: 'Home',
             tooltip: '''
@@ -63,7 +63,7 @@ class App extends StatelessWidget {
             ''',
             child: AppHomePage(title: appTitle),
           ),
-          SolidMenuItem(
+          const SolidMenuItem(
             icon: Icons.folder,
             title: 'Files',
             tooltip: '''
@@ -73,7 +73,7 @@ class App extends StatelessWidget {
             ''',
             child: SolidFile(basePath: ''),
           ),
-          SolidMenuItem(
+          const SolidMenuItem(
             icon: Icons.headphones,
             title: 'Music',
             tooltip: '''
@@ -86,7 +86,7 @@ class App extends StatelessWidget {
               child: Text('Another Page', style: TextStyle(fontSize: 24)),
             ),
           ),
-          SolidMenuItem(
+          const SolidMenuItem(
             icon: Icons.interpreter_mode,
             title: 'Interests',
             tooltip: '''
@@ -107,7 +107,7 @@ class App extends StatelessWidget {
           title: appTitle.split('-')[0],
 
           // VERSION
-          versionConfig: SolidVersionConfig(
+          versionConfig: const SolidVersionConfig(
             changelogUrl:
                 'https://github.com/gjwgit/book_of_life/blob/dev/'
                 'CHANGELOG.md',
@@ -138,7 +138,7 @@ class App extends StatelessWidget {
 
         // STATUS BAR
         statusBar: SolidStatusBarConfig(
-          serverInfo: SolidServerInfo(
+          serverInfo: const SolidServerInfo(
             serverUri: 'https://pods.solidcommunity.au',
             tooltip: 'Server status',
           ),
@@ -150,7 +150,7 @@ class App extends StatelessWidget {
             //loggedInTooltip: 'Click to log out',
             //loggedOutTooltip: 'Click to log in',
           ),
-          securityKeyStatus: SolidSecurityKeyStatus(
+          securityKeyStatus: const SolidSecurityKeyStatus(
             //  isKeySaved: true,
             //    onKeyStatusChanged: () {},
           ),
@@ -185,12 +185,12 @@ class App extends StatelessWidget {
         ),
 
         // THEME DARK/LIGHT Mode
-        themeToggle: SolidThemeToggleConfig(
+        themeToggle: const SolidThemeToggleConfig(
           enabled: true,
           showInAppBarActions: true,
         ),
 
-        child: AppHomePage(title: appTitle),
+        child: const AppHomePage(title: appTitle),
       ),
     );
   }
