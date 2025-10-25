@@ -1,6 +1,6 @@
 /// Book of Life - The application's home page.
 ///
-// Time-stamp: <Sunday 2025-08-31 06:46:56 +1000 Graham Williams>
+// Time-stamp: <Saturday 2025-10-25 21:04:57 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -27,16 +27,16 @@ library;
 
 import 'package:flutter/material.dart';
 
-class AppHomePage extends StatefulWidget {
-  const AppHomePage({super.key, required this.title});
+class Home extends StatefulWidget {
+  const Home({super.key, required this.title});
 
   final String title;
 
   @override
-  State<AppHomePage> createState() => _AppHomePageState();
+  State<Home> createState() => _HomeState();
 }
 
-class _AppHomePageState extends State<AppHomePage> {
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Center(
