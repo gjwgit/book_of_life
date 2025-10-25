@@ -26,6 +26,8 @@ au](https://solidcommunity.au/docs/bookoflife)
 
 ## 0.1 First beta release
 
++ Start using SolidLogin up front [0.0.8 20251025 gjw]
++ Update logo and image. Use SolidScaffold [0.0.7 20251005 gjw]
 + Review and fix lint issues [0.0.6 20250920 gjw]
 + Added SolidFiles widget [0.0.5 20250920 gjw]
 + Added theme button [0.0.4 20250827 gjw]
