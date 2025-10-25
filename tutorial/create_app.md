@@ -12,15 +12,17 @@ app itself.
 
 ### app.dart
 
-The `App()` is typically where we instantiate a SolidLogin,
-providing the login page for the app. After logging in the AppScaffold
-is instantiated.
+The `App()` is typically where we instantiate a `SolidLogin()`, often
+as the `child:` of a `SolidThemeApp()`.  The `SolidLogin()` provides
+the login page for the app. After logging in the `AppScaffold()`, as
+the `child:` of the `SolidLogin()`, is instantiated to contain the
+main functionality of the app.
 
 ### app_scaffold.dart
 
-The `AppScaffold()` builds a `SolidScafold()` to set up the framework
+The `AppScaffold()` builds a `SolidScaffold()` to set up the framework
 for a typical Solid app. The child is the `Home()` widget.
 
 ### home.dart
 
-The `Home()` widget exposes the main app funtionality.
+The `Home()` widget implements the main app funtionality.

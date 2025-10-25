@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Saturday 2025-10-25 21:05:11 +1100 Graham Williams>
+// Time-stamp: <Sunday 2025-10-26 06:43:31 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -43,7 +43,7 @@ var appScaffold = SolidScaffold(
             **Home:** Tap here to return to the main page for the app.
 
             ''',
-      child: AppHomePage(title: appTitle),
+      child: Home(title: appTitle),
     ),
     const SolidMenuItem(
       icon: Icons.folder,
@@ -133,22 +133,9 @@ var appScaffold = SolidScaffold(
 
   // STATUS BAR
   statusBar: const SolidStatusBarConfig(
-    serverInfo: SolidServerInfo(
-      serverUri: 'https://pods.solidcommunity.au',
-      // tooltip: 'Tap here to visit the Solid server.',
-    ),
-    loginStatus: SolidLoginStatus(
-      //    webId: 'user@example.com',
-      // onTap: () => debugPrint('Login/Logout'),
-      // TODO 20250919 gjw  SHOULD COME FROM SOLIDUI AND HAVE A DEFAULT
-      // onTap: () => handleLogout(context),
-      //loggedInTooltip: 'Click to log out',
-      //loggedOutTooltip: 'Click to log in',
-    ),
-    securityKeyStatus: SolidSecurityKeyStatus(
-      //  isKeySaved: true,
-      //    onKeyStatusChanged: () {},
-    ),
+    serverInfo: SolidServerInfo(serverUri: 'https://pods.solidcommunity.au'),
+    loginStatus: SolidLoginStatus(),
+    securityKeyStatus: SolidSecurityKeyStatus(),
   ),
 
   // ABOUT
