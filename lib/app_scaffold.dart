@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-10-26 15:47:14 +1100 Graham Williams>
+// Time-stamp: <Sunday 2025-10-26 15:50:04 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -65,7 +65,7 @@ var appScaffold = SolidScaffold(
 
             ''',
       child: Center(
-        child: Text('Another Page', style: TextStyle(fontSize: 24)),
+        child: Text('Music Library', style: TextStyle(fontSize: 24)),
       ),
     ),
     const SolidMenuItem(
@@ -78,7 +78,7 @@ var appScaffold = SolidScaffold(
 
             ''',
       child: Center(
-        child: Text('Another Page', style: TextStyle(fontSize: 24)),
+        child: Text('Video Library', style: TextStyle(fontSize: 24)),
       ),
     ),
     const SolidMenuItem(

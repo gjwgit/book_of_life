@@ -874,19 +874,19 @@ packages:
     description:
       path: "."
       ref: dev
-      resolved-ref: "44cc5232d7e7ac523f2e3f46aa296276d074bb5c"
+      resolved-ref: "133626cc3301a2117b91aad78abbaeeba92ce8d8"
       url: "https://github.com/anusii/solidpod.git"
     source: git
-    version: "0.7.13"
+    version: "0.7.16"
   solidui:
     dependency: "direct main"
     description:
       path: "."
       ref: dev
-      resolved-ref: "037d3e3d9bdbffad9e9d8b049dc8c401e6d6dac7"
+      resolved-ref: f721364d103f5d6b1c2318e26069cc3a3f8b8398
       url: "https://github.com/anusii/solidui.git"
     source: git
-    version: "0.0.4"
+    version: "0.0.6"
   source_span:
     dependency: transitive
     description:
@@ -1051,10 +1051,10 @@ packages:
     dependency: transitive
     description:
       name: version_widget
-      sha256: a7da5e1a9e376934f5042bfcc6fe170323e85bac186b98b60ed8b387aa605331
+      sha256: "70476a63dc059150b8717026ecf77888e70d86c4f22eabd8545a57307c80a040"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.6"
   watcher:
     dependency: transitive
     description:
