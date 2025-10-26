@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-10-26 06:43:31 +1100 Graham Williams>
+// Time-stamp: <Sunday 2025-10-26 15:47:14 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -109,26 +109,26 @@ var appScaffold = SolidScaffold(
       showDate: true,
     ),
 
-    // actions: [
-    //   SolidAppBarAction(
-    //     icon: Icons.search,
-    //     onPressed: () => debugPrint('Search'),
-    //     tooltip: 'Search',
-    //   ),
-    //   SolidAppBarAction(
-    //     icon: Icons.notifications,
-    //     onPressed: () => debugPrint('Notifications'),
-    //     tooltip: 'Notifications',
-    //   ),
-    // ],
-    // overflowItems: [
-    //   SolidOverflowMenuItem(
-    //     id: 'help',
-    //     icon: Icons.help,
-    //     label: 'Help',
-    //     onSelected: () => debugPrint('Help'),
-    //   ),
-    // ],
+    actions: [
+      SolidAppBarAction(
+        icon: Icons.search,
+        onPressed: () => debugPrint('Search'),
+        tooltip: 'Search',
+      ),
+      SolidAppBarAction(
+        icon: Icons.notifications,
+        onPressed: () => debugPrint('Notifications'),
+        tooltip: 'Notifications',
+      ),
+    ],
+    overflowItems: [
+      SolidOverflowMenuItem(
+        id: 'help',
+        icon: Icons.help,
+        label: 'Help',
+        onSelected: () => debugPrint('Help'),
+      ),
+    ],
   ),
 
   // STATUS BAR
@@ -149,9 +149,9 @@ var appScaffold = SolidScaffold(
     applicationLegalese: '''Copyright © 2025 Togaware Pty Ltd''',
     text: '''
 
-          Your book of life is written by you. This app provides support for you to do
-          just that, while retaining all your data encrypted and secure on a Solid
-          server of your choice.
+          Your book of life is written by you. This app provides support for you
+          to do just that, while retaining all your data encrypted and secure on
+          a Solid server of your choice.
 
           With this app you can store your **important numbers** so they are
           available whenever you need them. Your **health data** can be
