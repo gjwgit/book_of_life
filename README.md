@@ -11,8 +11,8 @@
 [![GitHub Issues](https://img.shields.io/github/issues/gjwgit/bookoflife)](https://github.com/gjwgit/bookoflife/issues)
 
 The BookOfLife is a tool to collect your life's data together in one
-secure and private place, while being able to share which parts of
-your life you want to with others. The app is being developed by
+secure and private place. You can selectively share any parts of your
+life with others. The app is being developed by
 [Togaware](https://togaware.com.au) and written by [Graham
 Williams](https://togaware.com/Graham.Williams.html).
 
@@ -66,7 +66,7 @@ solidui package.
 You can use this shell of an appliation as a template to get started
 with your own Solid Pod app.
 
-Time-stamp: <Thursday 2025-10-30 15:16:30 +1100 Graham Williams>
+Time-stamp: <Thursday 2025-10-30 15:17:44 +1100 Graham Williams>
 
 <!-- markdownlint-disable MD053 -->
 [comment]: # (Local Variables:)
