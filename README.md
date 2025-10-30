@@ -10,9 +10,6 @@
 [![GitHub commit activity (dev)](https://img.shields.io/github/commit-activity/w/gjwgit/bookoflife/dev)](https://github.com/gjwgit/rattle/commits/dev/)
 [![GitHub Issues](https://img.shields.io/github/issues/gjwgit/bookoflife)](https://github.com/gjwgit/bookoflife/issues)
 
-[![Google Play](https://img.shields.io/badge/Google%20Play-Available-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.togaware.bookoflife)
-[![SnapCraft](https://snapcraft.io/bookoflife/badge.svg)](https://snapcraft.io/bookoflife)
-
 The BookOfLife is a tool to collect your life's data together in one
 secure and private place, while being able to share which parts of
 your life you want to with others. The app is being developed by
@@ -69,7 +66,7 @@ solidui package.
 You can use this shell of an appliation as a template to get started
 with your own Solid Pod app.
 
-Time-stamp: <Thursday 2025-10-30 15:06:02 +1100 Graham Williams>
+Time-stamp: <Thursday 2025-10-30 15:16:30 +1100 Graham Williams>
 
 <!-- markdownlint-disable MD053 -->
 [comment]: # (Local Variables:)
