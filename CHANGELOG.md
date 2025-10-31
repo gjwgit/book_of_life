@@ -1,11 +1,10 @@
-# Book of Life Changelog
+# Book of Life
 
-Noted here are the high level changes for the BookOfLife app.
+We identify here the high level changes for the BookOfLife app.
 
-Guide: Each version update is noted here with a short user-oriented
-description of the update. Updates in the 0.0.n series are heading
-toward a 0.1 release. The `[version timestamp user]` string is
-utilised by the flutter version_widget package.
+Each version update includes a short user-oriented description.  The
+0.0.n is heading toward a 0.1 release. The `[version timestamp user]`
+string is utilised by the flutter version_widget package.
 
 Run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
@@ -21,11 +20,9 @@ Windows
 [**zip**](https://solidcommunity.au/installers/bookoflife-dev-windows.zip) or
 [**inno**](https://solidcommunity.au/installers/bookoflife-dev-windows-inno.exe).
 
-Coding documentation is available from [solid community
-au](https://solidcommunity.au/docs/bookoflife)
+## 0.1 First beta release of a solidui template
 
-## 0.1 First beta release
-
++ Refine the standard template architecture [0.0.9 20251101 gjw]
 + Start using SolidLogin up front [0.0.8 20251025 gjw]
 + Update logo and image. Use SolidScaffold [0.0.7 20251005 gjw]
 + Review and fix lint issues [0.0.6 20250920 gjw]
