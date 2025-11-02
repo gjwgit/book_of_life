@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Sunday 2025-10-26 15:50:04 +1100 Graham Williams>
+// Time-stamp: <Saturday 2025-11-01 08:05:17 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -46,14 +46,18 @@ var appScaffold = SolidScaffold(
       child: Home(title: appTitle),
     ),
     const SolidMenuItem(
-      icon: Icons.folder,
-      title: 'Files',
+      icon: Icons.interpreter_mode,
+      title: 'Interests',
       tooltip: '''
 
-            **Files:** Tap here to browse the files on your POD.
+            **Interests:** Tap here to access your life interests. You Movie
+            interests are managed by the MovieStar app but you get a summary
+            here.
 
             ''',
-      child: SolidFile(basePath: ''),
+      child: Center(
+        child: Text('Profile Page', style: TextStyle(fontSize: 24)),
+      ),
     ),
     const SolidMenuItem(
       icon: Icons.headphones,
@@ -82,18 +86,14 @@ var appScaffold = SolidScaffold(
       ),
     ),
     const SolidMenuItem(
-      icon: Icons.interpreter_mode,
-      title: 'Interests',
+      icon: Icons.folder,
+      title: 'Files',
       tooltip: '''
 
-            **Interests:** Tap here to access your life interests. You Movie
-            interests are managed by the MovieStar app but you get a summary
-            here.
+            **Files:** Tap here to browse the files on your POD.
 
             ''',
-      child: Center(
-        child: Text('Profile Page', style: TextStyle(fontSize: 24)),
-      ),
+      child: SolidFile(basePath: ''),
     ),
   ],
 
