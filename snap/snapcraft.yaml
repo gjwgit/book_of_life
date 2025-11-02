@@ -18,8 +18,8 @@ confinement: strict
 #      - screen-inhibit-control
 
 apps:
-  bookfolife:
-    command: bookfolife
+  bookoflife:
+    command: bookoflife
     extensions: [gnome] # gnome includes the libraries required by flutter
     plugs:
       - desktop
@@ -64,7 +64,7 @@ apps:
 #      - gstreamer1.0-plugins-base
 
 parts:
-  bookfolife:
+  bookoflife:
     source: .
     plugin: flutter
     flutter-target: lib/main.dart
