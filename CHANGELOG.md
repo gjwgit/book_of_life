@@ -2,11 +2,14 @@
 
 We identify here the high level changes for the BookOfLife app.
 
-Each version update includes a short user-oriented description.  The
-0.0.n is heading toward a 0.1 release. The `[version timestamp user]`
-string is utilised by the flutter version_widget package.
+Each version update includes a short user-oriented description.
 
-Run the app online: [**web**](https://bookoflife.solidcommunity.au).
+The next release is 0.1 following a 0.0.n series or updates.
+
+The `[version timestamp user]` string is utilised by the flutter
+version_widget package.
+
+You can run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
 Download the latest version:
 GNU/Linux
