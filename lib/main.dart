@@ -1,6 +1,6 @@
-/// Book of Life - Define the main entry point for the app.
+/// Define the main entry point for the app.
 ///
-// Time-stamp: <Saturday 2025-09-20 21:01:48 +1000 Graham Williams>
+// Time-stamp: <Friday 2025-11-21 09:23:31 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
