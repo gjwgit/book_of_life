@@ -1,6 +1,6 @@
 /// Define the main entry point for the app.
 ///
-// Time-stamp: <Friday 2025-11-21 09:23:31 +1100 Graham Williams>
+// Time-stamp: <Friday 2025-11-21 19:02:07 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -33,7 +33,7 @@ import 'package:bookoflife/app.dart';
 import 'package:bookoflife/constants/app.dart';
 import 'package:bookoflife/utils/is_desktop.dart';
 
-/// Main entry point for the [BookOfLife] application.
+/// Main entry point for the application.
 
 void main() async {
   // We require [async] because we asynchronously [await] the window manager

@@ -1,6 +1,6 @@
-/// Book of Life - App-wide constants.
+/// App-wide constants.
 ///
-// Time-stamp: <Friday 2025-08-15 09:03:04 +1000 Graham Williams>
+// Time-stamp: <Friday 2025-11-21 19:02:53 +1100 Graham Williams>
 ///
 /// Copyright (C) 2023, Software Innovation Institute
 ///
