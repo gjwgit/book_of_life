@@ -4,7 +4,7 @@
 [![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/gjwgit/bookoflife)
-[![GitHub License](https://img.shields.io/github/license/gjwgit/bookoflife)](https://raw.githubusercontent.com/gjwgit/bookoflife/main/LICENSE)
+[![GitHub License](https://img.shields.io/github/license/gjwgit/bookoflife)](https://raw.githubusercontent.com/gjwgit/bookoflife/dev/LICENSE)
 [![Flutter Version](https://img.shields.io/badge/dynamic/yaml?url=https://raw.githubusercontent.com/gjwgit/bookoflife/master/pubspec.yaml&query=$.version&label=version)](https://github.com/gjwgit/bookoflife/blob/dev/CHANGELOG.md)
 [![Last Updated](https://img.shields.io/github/last-commit/gjwgit/bookoflife?label=last%20updated)](https://github.com/gjwgit/bookoflife/commits/dev/)
 [![GitHub commit activity (dev)](https://img.shields.io/github/commit-activity/w/gjwgit/bookoflife/dev)](https://github.com/gjwgit/rattle/commits/dev/)
@@ -13,14 +13,11 @@
 The BookOfLife is a tool to collect your life's data together in one
 secure and private place. You can selectively share any parts of your
 life with others. The app is being developed by
-[Togaware](https://togaware.com.au) and written by [Graham
+[Togaware](https://togaware.com) and written by [Graham
 Williams](https://togaware.com/Graham.Williams.html).
 
 If you appreciate the app then please show some ❤️ and star the GitHub
-Repository to support the project.  You can install the released
-version of the app from different repositories including [Google Play
-Store](https://play.google.com/store/apps/details?id=com.togaware.bookoflife)
-for Android and [SnapCraft](https://snapcraft.io/bookoflife) for Linux.
+Repository to support the project.
 
 The latest version of the app can be run online at
 [bookoflife.solidcommunity.au](https://bookoflife.solidcommunity.au) with
@@ -66,7 +63,7 @@ solidui package.
 You can use this shell of an appliation as a template to get started
 with your own Solid Pod app.
 
-Time-stamp: <Thursday 2025-10-30 15:17:44 +1100 Graham Williams>
+Time-stamp: <Monday 2025-11-24 08:44:25 +1100 Graham Williams>
 
 <!-- markdownlint-disable MD053 -->
 [comment]: # (Local Variables:)
