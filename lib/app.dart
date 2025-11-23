@@ -48,8 +48,6 @@ class App extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
       ),
 
-      // This is the usual Scaffold() that we then "seemlessly" replace with
-      // SolidScaffold().
       home: SolidLogin(
         image: const AssetImage('assets/images/app_image.png'),
         logo: const AssetImage('assets/images/app_icon.png'),

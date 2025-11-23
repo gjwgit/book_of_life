@@ -131,19 +131,19 @@ var appScaffold = SolidScaffold(
     ],
   ),
 
-  // STATUS BAR
+  // STATUS BAR.
   statusBar: const SolidStatusBarConfig(
     serverInfo: SolidServerInfo(serverUri: 'https://pods.solidcommunity.au'),
     loginStatus: SolidLoginStatus(),
     securityKeyStatus: SolidSecurityKeyStatus(),
   ),
 
-  // ABOUT
+  // ABOUT.
   aboutConfig: SolidAboutConfig(
     applicationName: appTitle.split(' - ')[0],
     applicationIcon: Image.asset(
       'assets/images/app_icon.png',
-      width: 64, // Adjust size as needed
+      width: 64,
       height: 64,
     ),
     applicationLegalese: '''Copyright © 2025 Togaware Pty Ltd''',
@@ -164,7 +164,7 @@ var appScaffold = SolidScaffold(
           ''',
   ),
 
-  // THEME DARK/LIGHT Mode
+  // THEME DARK/LIGHT Mode.
   themeToggle: const SolidThemeToggleConfig(
     enabled: true,
     showInAppBarActions: true,

@@ -1,6 +1,6 @@
 /// Check if we are running a desktop (and not a browser).
 ///
-/// Copyright (C) 2023, Software Innovation Institute
+/// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
 /// License: GNU General Public License, Version 3 (the "License")
 /// https://opensource.org/license/gpl-3-0

@@ -2,7 +2,7 @@
 ///
 // Time-stamp: <Friday 2025-11-21 19:02:53 +1100 Graham Williams>
 ///
-/// Copyright (C) 2023, Software Innovation Institute
+/// Copyright (C) 2025, Software Innovation Institute
 ///
 /// Licensed under the GNU General Public License, Version 3 (the "License");
 ///
