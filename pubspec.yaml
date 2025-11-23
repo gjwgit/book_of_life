@@ -18,7 +18,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
-  solidui: ^0.0.8
+  solidui: ^0.0.9
   universal_io: ^2.2.2
   window_manager: ^0.5.0
 
