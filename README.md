@@ -25,6 +25,7 @@ no installation required, or downloaded and installed for your
 platform from the [Solid Community AU](https://solidcommunity.au)
 repository:
 
+<!-- markdownlint-disable MD036 -->
 + **Web**
   [solidcommunity](https://bookoflife.solidcommunity.au/);
 + **Android**
@@ -63,7 +64,9 @@ solidui package.
 You can use this shell of an appliation as a template to get started
 with your own Solid Pod app.
 
-Time-stamp: <Monday 2025-11-24 08:44:25 +1100 Graham Williams>
+<!-- markdownlint-disable MD036 -->
+*Time-stamp: <Saturday 2025-12-06 09:41:43 +1100 Graham Williams>*
+<!-- markdownlint-enable MD036 -->
 
 <!-- markdownlint-disable MD053 -->
 [comment]: # (Local Variables:)
