@@ -24,7 +24,7 @@ env:
   APP: bookoflife
   RELEASE: dev
   LINUX_PKGS: libsecret-1-dev
-  FLUTTER_VERSION: '3.35.7'
+  FLUTTER_VERSION: '3.38.4'
 
 jobs:
 
