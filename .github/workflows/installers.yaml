@@ -68,7 +68,8 @@ jobs:
   # one job, but the snap build was somewhat independent and didn't
   # work straight away, so keep separate until debugged. Similarly
   # keep the DEB build separate for now, though it will probably work
-  # tacked onto the ZIP build.
+  # tacked onto the ZIP build. By being separate it is easier to test
+  # separately or to build separately as required.
 
   package-linux-deb:
     if: |
@@ -80,6 +81,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      # Set the time zone so that the timestamp for the file matches
+      # my time zone.
+
+      - name: Set Time Zone
+        run: |
+          sudo timedatectl set-timezone Australia/Melbourne
+          date
 
       - name: Clone Repository
         uses: actions/checkout@v4
@@ -326,6 +335,11 @@ jobs:
     steps:
       - name: Clone Repository
         uses: actions/checkout@v4
+
+      - name: Set Time Zone
+        run: |
+          sudo systemsetup -settimezone "Australia/Melbourne"
+          date
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -984,6 +998,11 @@ jobs:
     steps:
       - name: Clone Repository
         uses: actions/checkout@v4
+
+      - name: Set Time Zone
+        run: |
+          tzutil /s "AUS Eastern Standard Time"
+          Get-Date
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
