@@ -9,8 +9,8 @@
 APP=$(basename "$(dirname "$(pwd)")")
 REP=$(git remote get-url origin | sed -E 's#.*[/:]([^/]+)/[^/]+(\.git)?$#\1#')
 
-HOST=
-FLDR=
+HOST=togaware.com
+FLDR=apps/access/
 DEST=${HOST}:${FLDR}
 
 ssh ${HOST} 'if [ ! -d ${FLDR} ]; then mkdir ${FLDR}; chown gjw:gjw ${FLDR}; fi'
@@ -53,14 +53,31 @@ version=$(grep version ../pubspec.yaml | head -1 | cut -d ':' -f 2 | sed 's/ //g
 # gh api -H "Accept: application/vnd.github+json"   repos/${REP}/${APP}/actions/artifacts/3300608315/zip >| artifact.zip
 #
 # Need to get the correct artifact ID for each artefact.
-#
-# Temporarily ignore failed installer builds while macOS and iOS are integrated.
 
-if [[ "${status}" == "completed" ]]; then # && "${conclusion}" == "success" ]]; then
+if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
 
     echo "Uploading ${APP} version ${version}"
     echo "Uploads are going to ${DEST}."
     echo
+
+    echo '***** UPLOAD LINUX DEB'
+
+    ## gh run download ${bumpId} --name ${APP}-linux-deb
+
+    artifactId=$(gh api -H "Accept: application/vnd.github+json" /repos/${REP}/${APP}/actions/artifacts \
+		    --jq '.artifacts[] | select(.name | endswith("-linux-deb")) | .id' | head -n 1)
+    echo "artifact id: $artifactId"
+    gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
+    unzip artifact.zip
+    debname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    rm -f artifact.zip
+
+    echo ${DEST}
+
+    rsync -avzh ${debname} ${DEST}/${APP}_amd64.deb
+    mv -f ${debname} ARCHIVE/
+
+    echo ""
 
     echo '***** UPLOAD LINUX ZIP'
 
