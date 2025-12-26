@@ -128,7 +128,7 @@ jobs:
       - name: Get Version from pubspec.yaml
         id: vars
         run: |
-          VERSION=$(yq eval '.version' pubspec.yaml | sed 's/+.*//'))
+          VERSION=$(yq eval '.version' pubspec.yaml | sed 's/+.*//')
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
 
       - name: Check the app version number
