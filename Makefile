@@ -151,5 +151,5 @@ sinstall:
 # /usr/bin/rattle. This is working so add deb into the install and now
 # utilise that for the default install on my machine.
 
-ginstall: deb apk appbundle prod
+ginstall: apk appbundle prod
 	(cd installers; make $@)
