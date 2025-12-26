@@ -149,7 +149,7 @@ jobs:
           echo "Architecture: amd64" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
           echo "Depends: libgtk-3-0, libblkid1, liblzma5" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
           echo "Maintainer: Graham Williams <graham.williams@togaware.com>" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
-          echo "Description: DESCRIPTION >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
+          echo "Description: DESCRIPTION" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
 
           echo "[Desktop Entry]" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
           echo "Name=${{env.APP}}" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
