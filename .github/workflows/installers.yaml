@@ -63,8 +63,13 @@ jobs:
   # 20250311 gjw Support for Ubuntu 20.04 is being deprecated
   # https://github.com/gjwgit/rattleng/actions/runs/13753262146.
   # Move to 22.04 to get broadest deployment.
+  #
+  # 20251226 gjw I considered combining the build for snap and zip as
+  # one job, but the snap build was somewhat independent and didn't
+  # work straight away, so keep separate until debugged. Similarly
+  # keep the deb build separate.
 
-  package-linux-snap-zip:
+  package-linux-zip:
     if: |
       contains(github.event.head_commit.message, 'bump version') ||
       contains(github.event.head_commit.message, 'build installers') ||
@@ -128,6 +133,25 @@ jobs:
           name: ${{ env.APP }}-linux-zip
           path: build/linux/x64/release/bundle/${{ env.APP }}-${{ env.RELEASE }}-linux.zip
 
+  package-linux-snap:
+    if: |
+      contains(github.event.head_commit.message, 'bump version') ||
+      contains(github.event.head_commit.message, 'build installers') ||
+      contains(github.event.head_commit.message, 'build linux') ||
+      contains(github.event.head_commit.message, 'build snap')
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Clone Repository
+        uses: actions/checkout@v4
+
+      - name: Update system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade -y
+
       - name: Build snap
         if: hashFiles('snap/**') != ''
         uses: snapcore/action-build@v1
@@ -139,40 +163,6 @@ jobs:
         with:
           name: ${{ env.APP }}-linux-snap
           path: ${{ steps.build.outputs.snap }}
-
-  # 20251226 gjw Remove the separate snap build, incorporating it into
-  # the above zip build. Similarly, eventually, for the deb build.
-
-  # package-linux-snap:
-  #   if: |
-  #     contains(github.event.head_commit.message, 'bump version') ||
-  #     contains(github.event.head_commit.message, 'build installers') ||
-  #     contains(github.event.head_commit.message, 'build linux') ||
-  #     contains(github.event.head_commit.message, 'build snap')
-
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-
-  #     - name: Clone Repository
-  #       uses: actions/checkout@v4
-
-  #     - name: Update system packages
-  #       run: |
-  #         sudo apt-get update
-  #         sudo apt-get upgrade -y
-
-  #     - name: Build snap
-  #       if: hashFiles('snap/**') != ''
-  #       uses: snapcore/action-build@v1
-  #       id: build
-
-  #     - name: Upload snap artifact
-  #       if: hashFiles('snap/**') != ''
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: ${{ env.APP }}-linux-snap
-  #         path: ${{ steps.build.outputs.snap }}
 
   # publish:
   #   needs: build
