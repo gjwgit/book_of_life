@@ -143,6 +143,10 @@ jobs:
       - name: Check the app version number
         run: echo ${VERSION}
 
+      - name: Temporary Check Date
+        run: |
+          date
+
       - name: Deb Package
         run: |
           mkdir -p build/${{env.APP}}_${VERSION}_amd64/DEBIAN
@@ -194,6 +198,10 @@ jobs:
           dpkg-deb --build build/${{env.APP}}_${VERSION}_amd64
 
           ls -l build/*
+
+      - name: Temporary Check Date
+        run: |
+          date
 
       - name: Upload deb artifact
         uses: actions/upload-artifact@v4
