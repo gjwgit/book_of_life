@@ -25,6 +25,7 @@ Windows
 
 ## 0.1 First beta release of a solidui template
 
++ Move deb build into github workflow [0.0.10 20251226 gjw]
 + Refine the standard template architecture [0.0.9 20251101 gjw]
 + Start using SolidLogin up front [0.0.8 20251025 gjw]
 + Update logo and image. Use SolidScaffold [0.0.7 20251005 gjw]
