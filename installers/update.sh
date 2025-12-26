@@ -9,8 +9,8 @@
 APP=$(basename "$(dirname "$(pwd)")")
 REP=$(git remote get-url origin | sed -E 's#.*[/:]([^/]+)/[^/]+(\.git)?$#\1#')
 
-HOST=togaware.com
-FLDR=apps/access/
+HOST=solidcommunity.au
+FLDR=/var/www/html/installers/
 DEST=${HOST}:${FLDR}
 
 ssh ${HOST} 'if [ ! -d ${FLDR} ]; then mkdir ${FLDR}; chown gjw:gjw ${FLDR}; fi'
@@ -36,7 +36,7 @@ conclusion=$(gh run view ${bumpId} --json conclusion --jq '.conclusion')
 # Determine the latest version from pubspec.yaml. Assumes the
 # latest Bump Version push is the same version.
 
-version=$(grep version ../pubspec.yaml | head -1 | cut -d ':' -f 2 | sed 's/ //g')
+version=$(grep version ../pubspec.yaml | head -1 | cut -d ':' -f 2 | sed 's/ //g' | sed 's/+.*//')
 
 # Only proceed if the latest action hase been completed successfully
 
@@ -107,8 +107,8 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     unzip artifact.zip
     rm -f artifact.zip
 
-    rsync -avzh ${APP}_${version%%+*}_amd64.snap ${DEST}/${APP}_amd64.snap
-    mv -f ${APP}_${version%%+*}_amd64.snap ARCHIVE/${APP}_${version%%+*}_amd64.snap
+    rsync -avzh ${APP}_${version}_amd64.snap ${DEST}/${APP}_amd64.snap
+    mv -f ${APP}_${version}_amd64.snap ARCHIVE/${APP}_${version}_amd64.snap
     ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}_amd64.snap"
 
     echo ""
