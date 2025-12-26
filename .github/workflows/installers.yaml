@@ -142,7 +142,7 @@ jobs:
           mkdir -p build/${{env.APP}}_${VERSION}_amd64/usr/share/applications
           mkdir -p build/${{env.APP}}_${VERSION}_amd64/usr/share/icons/hicolor/512x512/apps
 
-          echo "Package: ${{env.APP}}" >> build/${{env.APP}}_${VERSION}/DEBIAN/control
+          echo "Package: ${{env.APP}}" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
           echo "Version: ${VERSION}" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
           echo "Section: utils" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
           echo "Priority: optional"  >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
