@@ -2,7 +2,7 @@
 #
 # Generic Makefile
 #
-# Time-stamp: <Friday 2025-12-26 21:13:17 +1100 Graham Williams>
+# Time-stamp: <Friday 2025-12-26 21:16:00 +1100 Graham Williams>
 #
 # Copyright (c) Graham.Williams@togaware.com
 #
@@ -118,6 +118,10 @@ appbundle::
 	ssh $(REPO) chmod a+r $(RLOC)$(APP).aab
 	mv -f installers/$(APP)-*.aab installers/ARCHIVE/
 	rm -f installers/$(APP).aab
+
+# 20251226 gjw This has been moved into the installers github workflow
+# but is retained here for convenience to build a deb locally and
+# install it, often for a quick testing cycle.
 
 deb:
 	@echo "Build $(APP) version $(VER)"
