@@ -151,14 +151,14 @@ jobs:
           echo "Maintainer: Graham Williams <graham.williams@togaware.com>" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
           echo "Description: DESCRIPTION" >> build/${{env.APP}}_${VERSION}_amd64/DEBIAN/control
 
-          echo "[Desktop Entry]" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
-          echo "Name=${{env.APP}}" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
-          echo "Comment=Collect your documents in Pods" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
-          echo "Exec=/usr/bin/${{env.APP}}" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
-          echo "Icon=${{env.APP}}" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
-          echo "Terminal=false" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
-          echo "Type=Application" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
-          echo "Categories=Utility;" >> build/${{env.APP}}_${VERSION}_amd62/usr/share/applications/com.togaware.${{env.APP}}.desktop
+          echo "[Desktop Entry]" >> build/${{env.APP}}_${VERSION}_amd64/usr/share/applications/com.togaware.${{env.APP}}.desktop
+          echo "Name=${{env.APP}}" >> build/${{env.APP}}_${VERSION}_amd64/usr/share/applications/com.togaware.${{env.APP}}.desktop
+          echo "Comment=Collect your documents in Pods" >> build/${{env.APP}}_${VERSION}_amd64/usr/share/applications/com.togaware.${{env.APP}}.desktop
+          echo "Exec=/usr/bin/${{env.APP}}" >> build/${{env.APP}}_${VERSION}_amd64/usr/share/applications/com.togaware.${{env.APP}}.desktop
+          echo "Icon=${{env.APP}}" >> build/${{env.APP}}_${VERSION}_amd64/usr/share/applications/com.togaware.${{env.APP}}.desktop
+          echo "Terminal=false" >> build/${{env.APP}}_${VERSION}_amd64/usr/share/applications/com.togaware.${{env.APP}}.desktop
+          echo "Type=Application" >> build/${{env.APP}}_${VERSION}_amd64/usr/share/applications/com.togaware.${{env.APP}}.desktop
+          echo "Categories=Utility;" >> build/${{env.APP}}_${VERSION}_amd64/usr/share/applications/com.togaware.${{env.APP}}.desktop
 
           # Copy the built flutter application.
 
