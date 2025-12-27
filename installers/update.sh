@@ -131,9 +131,9 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
-    rsync -avzh ${APP}-macos.dmg ${DEST}/${APP}-macos.dmg
-    mv ${APP}-macos-unsigned.dmg ARCHIVE/${APP}_${version}_macos.dmg
-    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-macos.dmg"
+    rsync -avzh ${fname} ${DEST}/
+    mv ${fname} ARCHIVE/${APP}_${version}_macos.dmg
+    ssh ${HOST} "cd ${FLDR}; chmod a+r ${fname}"
 
     echo ""
 
@@ -243,8 +243,8 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
-    rsync -avzh ${APP}-windows-inno.exe ${DEST}
-    mv ${APP}-windows-inno.exe ARCHIVE/${APP}_${version}_windows-inno.exe
+    rsync -avzh ${fname} ${DEST}
+    mv ${fname} ARCHIVE/${APP}_${version}_windows-inno.exe
 
     echo ""
 
