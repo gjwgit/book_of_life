@@ -33,13 +33,13 @@ repository:
 + **GNU/Linux**
   [snap](https://solidcommunity.au/installers/bookoflife_amd64.snap) or
   [deb](https://solidcommunity.au/installers/bookoflife_amd64.deb) or
-  [zip](https://solidcommunity.au/installers/bookoflife-dev-linux.zip);
+  [zip](https://solidcommunity.au/installers/bookoflife-linux.zip);
 + **macOS**
-  [dmg](https://solidcommunity.au/installers/bookoflife-dev-macos.dmg) or
-  [zip](https://solidcommunity.au/installers/bookoflife-dev-macos.zip);
+  [dmg](https://solidcommunity.au/installers/bookoflife-macos.dmg) or
+  [zip](https://solidcommunity.au/installers/bookoflife-macos.zip);
 + **Windows**
-  [zip](https://solidcommunity.au/installers/bookoflife-dev-windows.zip) or
-  [inno](https://solidcommunity.au/installers/bookoflife-dev-windows-inno.exe).
+  [zip](https://solidcommunity.au/installers/bookoflife-windows.zip) or
+  [inno](https://solidcommunity.au/installers/bookoflife-windows-inno.exe).
 
 Contributions are welcome. Visit
 [github](https://github.com/gjwgit/bookoflife) to submit an issue or,
@@ -65,7 +65,7 @@ You can use this shell of an appliation as a template to get started
 with your own Solid Pod app.
 
 <!-- markdownlint-disable MD036 -->
-*Time-stamp: <Saturday 2025-12-27 20:34:44 +1100 Graham Williams>*
+*Time-stamp: <Saturday 2025-12-27 21:43:49 +1100 Graham Williams>*
 <!-- markdownlint-enable MD036 -->
 
 <!-- markdownlint-disable MD053 -->

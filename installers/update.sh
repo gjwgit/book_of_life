@@ -113,8 +113,8 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
-    rsync -avzh ${APP}-dev-linux.zip ${DEST}
-    mv -f ${APP}-dev-linux.zip ARCHIVE/${APP}_${version}_linux.zip
+    rsync -avzh ${APP}-linux.zip ${DEST}
+    mv -f ${APP}-linux.zip ARCHIVE/${APP}_${version}_linux.zip
 
     echo ""
 
@@ -131,9 +131,9 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
-    rsync -avzh ${APP}-dev-macos.dmg ${DEST}/${APP}-dev-macos.dmg
-    mv ${APP}-dev-macos-unsigned.dmg ARCHIVE/${APP}_${version}_macos.dmg
-    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-dev-macos.dmg"
+    rsync -avzh ${APP}-macos.dmg ${DEST}/${APP}-macos.dmg
+    mv ${APP}-macos-unsigned.dmg ARCHIVE/${APP}_${version}_macos.dmg
+    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-macos.dmg"
 
     echo ""
 
@@ -150,9 +150,9 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
-    rsync -avzh ${APP}-dev-macos.zip ${DEST}
-    mv ${APP}-dev-macos.zip ARCHIVE/${APP}_${version}_macos.zip
-    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-dev-*.zip ${APP}-dev-*.exe"
+    rsync -avzh ${APP}-macos.zip ${DEST}
+    mv ${APP}-macos.zip ARCHIVE/${APP}_${version}_macos.zip
+    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-*.zip ${APP}-*.exe"
 
     echo ""
 
@@ -243,8 +243,8 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
-    rsync -avzh ${APP}-dev-windows-inno.exe ${DEST}
-    mv ${APP}-dev-windows-inno.exe ARCHIVE/${APP}_${version}_windows-inno.exe
+    rsync -avzh ${APP}-windows-inno.exe ${DEST}
+    mv ${APP}-windows-inno.exe ARCHIVE/${APP}_${version}_windows-inno.exe
 
     echo ""
 
@@ -261,9 +261,9 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
-    rsync -avzh ${APP}-dev-windows.zip ${DEST}
-    mv -f ${APP}-dev-windows.zip ARCHIVE/${APP}_${version}_windows.zip
-    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-dev-*.zip ${APP}-dev-*.exe"
+    rsync -avzh ${APP}-windows.zip ${DEST}
+    mv -f ${APP}-windows.zip ARCHIVE/${APP}_${version}_windows.zip
+    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-*.zip ${APP}-*.exe"
 
 else
     gh run view ${bumpId}

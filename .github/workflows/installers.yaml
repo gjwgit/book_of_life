@@ -246,14 +246,14 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: "zip"
-          filename: ${{ env.APP }}-${{ env.RELEASE }}-linux.zip
+          filename: ${{env.APP}}-linux.zip
           directory: build/linux/x64/release/bundle
 
       - name: Upload Artefact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.APP }}-linux-zip
-          path: build/linux/x64/release/bundle/${{ env.APP }}-${{ env.RELEASE }}-linux.zip
+          name: ${{env.APP}}-linux-zip
+          path: build/linux/x64/release/bundle/${{env.APP}}-linux.zip
 
   package-linux-snap:
     if: |
@@ -1009,14 +1009,14 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          filename: ${{ env.APP }}-${{env.RELEASE}}-windows.zip
+          filename: ${{env.APP}}-windows.zip
           directory: build/windows/x64/runner/Release
 
       - name: Upload Artefact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP }}-windows-zip
-          path: build/windows/x64/runner/Release/${{ env.APP }}-${{env.RELEASE}}-windows.zip
+          path: build/windows/x64/runner/Release/${{ env.APP }}-windows.zip
 
       # Package as EXE
 
@@ -1038,4 +1038,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP }}-windows-inno
-          path: D:\a\${{ env.APP }}\${{ env.APP }}\installers\installers\${{ env.APP }}-dev-windows-inno.exe
+          path: D:\a\${{ env.APP }}\${{ env.APP }}\installers\installers\${{ env.APP }}-windows-inno.exe
