@@ -2,7 +2,7 @@
 #
 # Generic Makefile
 #
-# Time-stamp: <Saturday 2025-12-27 08:59:50 +1100 Graham Williams>
+# Time-stamp: <Sunday 2025-12-28 05:19:40 +1100 Graham Williams>
 #
 # Copyright (c) Graham.Williams@togaware.com
 #
@@ -161,4 +161,4 @@ upload:
 debin:
 	wajig install installers/ARCHIVE/$(APP)_$(VER)_amd64.deb
 
-ginstall: apk appbundle prod upload debin
+ginstall: upload debin apk appbundle prod
