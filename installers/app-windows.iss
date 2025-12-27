@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "BookOfLife"
-#define MyAppVersion "dev-windows-inno"
+#define MyAppVersion "windows-inno"
 #define MyAppPublisher "Togaware Pty Ltd"
 #define MyAppURL "https://github.com/gjwgit/bookoflife
 #define MyAppExeName "bookoflife.exe"
