@@ -5,7 +5,7 @@ name: Build Installers
 # can be downloaded locally using the github command line `gh`. I am
 # not utilising github SECRETS yet but will do so to push the packages
 # directly to repository and to build signed packages.
-
+#
 # 20251017 gjw The dev branch used to be assumed in the naming of
 # artefacts below using `${{ github.ref_name }}`. But other branch
 # names are then problematic, particularly if the branch name includes
@@ -13,23 +13,26 @@ name: Build Installers
 # limiting the builds. For testing build processes in a separate
 # branch, named other than `dev` we now use a branch named
 # `build`. All `github.ref_name` are replaced with env.RELEASE.
-
+#
 # 20251017 jesscmoore Added github secrets for macos signing during
 # build and added signing workflow as per
 # <https://docs.github.com/en/actions/how-tos/deploy/deploy-to-third-party-platforms/sign-xcode-applications>
-
+#
 # 20251029 jesscmoore Use flutter flavors to build with separate build
 # configurations for app store ('staging' flavor, uses distribution
 # certificate) and developer testing ('dev' flavor, uses development
 # certificate). Workflows added for building unsigned, signed ('dev'
 # and 'staging') macos apps.
 # https://docs.flutter.dev/deployment/flavors-ios
-
+#
 # 20251018 jesscmoore Added github secrets for ios signing
 # and workflow for ios ipa archive.
-
+#
 # 20251020 jesscmoore Added IOS development provisioning profile in
 # Apple Developer Program to use with manual signing
+#
+# 20251227 gjw Review and unify the naming scheme across all
+# platforms. Remove the -dev- from file names.
 
 on:
   push:
@@ -355,12 +358,12 @@ jobs:
       - name: Create DMG (Unsigned)
         run: |
           mkdir -p dmg_temp
-          cp -R "build/macos/Build/Products/Release/${{ env.APP }}.app" dmg_temp/
+          cp -R "build/macos/Build/Products/Release/${{env.APP}}.app" dmg_temp/
           ln -s /Applications dmg_temp/Applications
           hdiutil create -volname "${{ env.APP }}" \
             -srcfolder dmg_temp \
             -ov -format UDZO \
-            "${{ env.APP }}-${{github.ref_name}}-macos.dmg"
+            "${{ env.APP }}-macos.dmg"
 
       - name: Note the DMG created
         run: |
@@ -370,7 +373,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP }}-macos-dmg
-          path: ${{ env.APP }}-${{github.ref_name}}-macos.dmg
+          path: ${{ env.APP }}-macos.dmg
 
       # Package as ZIP
 
@@ -380,7 +383,7 @@ jobs:
           type: 'zip'
           directory: build/macos/Build/Products/Release
           path: ${{ env.APP }}.app
-          filename: ${{ env.APP }}-${{github.ref_name}}-macos.zip
+          filename: ${{ env.APP }}-macos.zip
 
       - name: Review ZIP exists
         run: ls -lh build/macos/Build/Products/Release
@@ -389,7 +392,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP }}-macos-zip
-          path: build/macos/Build/Products/Release/${{ env.APP }}-${{github.ref_name}}-macos.zip
+          path: build/macos/Build/Products/Release/${{ env.APP }}-macos.zip
 
   ########################################################################
   # MACOS - UNSIGNED
