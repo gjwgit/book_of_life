@@ -1018,8 +1018,8 @@ jobs:
       - name: Upload Artefact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.APP }}-windows-zip
-          path: build/windows/x64/runner/Release/${{ env.APP }}-windows.zip
+          name: ${{env.APP}}-windows-zip
+          path: build/windows/x64/runner/Release/${{env.APP}}-windows.zip
 
       # Package as EXE
 
@@ -1040,5 +1040,5 @@ jobs:
       - name: Upload Artefact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.APP }}-windows-inno
-          path: D:\a\${{ env.APP }}\${{ env.APP }}\installers\installers\${{ env.APP }}-windows-inno.exe
+          name: ${{env.APP}}-windows-inno
+          path: D:\a\${{env.APP}}\${{env.APP}}\installers\installers\${{env.APP}}-windows-inno.exe
