@@ -12,19 +12,19 @@ version_widget package.
 You can run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
 Download the latest version:
-Android
-[**aab**](https://solidcommunity.au/installers/bookoflife.apk) or
-[**apk**](https://solidcommunity.au/installers/bookoflife.apk) -
-GNU/Linux
-[**deb**](https://solidcommunity.au/installers/bookoflife_amd64.deb) or
-[**snap**](https://solidcommunity.au/installers/bookoflife_amd64.snap) or
-[**zip**](https://solidcommunity.au/installers/bookoflife-linux.zip) -
-macOS
-[**dmg**](https://solidcommunity.au/installers/bookoflife-macos.dmg) or
-[**zip**](https://solidcommunity.au/installers/bookoflife-macos.zip) -
-Windows
-[**inno**](https://solidcommunity.au/installers/bookoflife-windows-inno.exe) or
-[**zip**](https://solidcommunity.au/installers/bookoflife-windows.zip).
++ Android
+  [**aab**](https://solidcommunity.au/installers/bookoflife.apk) or
+  [**apk**](https://solidcommunity.au/installers/bookoflife.apk);
++ GNU/Linux
+  [**deb**](https://solidcommunity.au/installers/bookoflife_amd64.deb) or
+  [**snap**](https://solidcommunity.au/installers/bookoflife_amd64.snap) or
+  [**zip**](https://solidcommunity.au/installers/bookoflife-linux.zip);
++ macOS
+  [**dmg**](https://solidcommunity.au/installers/bookoflife-macos.dmg) or
+  [**zip**](https://solidcommunity.au/installers/bookoflife-macos.zip);
++ Windows
+  [**inno**](https://solidcommunity.au/installers/bookoflife-windows-inno.exe) or
+  [**zip**](https://solidcommunity.au/installers/bookoflife-windows.zip).
 
 ## 0.1 First beta release of a solidui template
 
@@ -37,4 +37,4 @@ Windows
 + Added theme button [0.0.4 20250827 gjw]
 + Extract version from pubspec [0.0.3 20250820 gjw]
 + Test SolidScaffold functionality [0.0.2 20250820 gjw]
-+ Initialise the app [0.0.1 20250818 gjw]
+  + Initialise the app [0.0.1 20250818 gjw]
