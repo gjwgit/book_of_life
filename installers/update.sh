@@ -69,29 +69,14 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     echo "artifact id: $artifactId"
     gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
     unzip artifact.zip
-    debname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    fname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    touch ${fname} # Timestamp with current date/time as the release time.
     rm -f artifact.zip
 
     echo ${DEST}
 
-    rsync -avzh ${debname} ${DEST}/${APP}_amd64.deb
-    mv -f ${debname} ARCHIVE/
-
-    echo ""
-
-    echo '***** UPLOAD LINUX ZIP'
-
-    ## gh run download ${bumpId} --name ${APP}-linux-zip
-
-    artifactId=$(gh api -H "Accept: application/vnd.github+json" /repos/${REP}/${APP}/actions/artifacts \
-		    --jq '.artifacts[] | select(.name | endswith("-linux-zip")) | .id' | head -n 1)
-    echo "artifact id: $artifactId"
-    gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
-    unzip artifact.zip
-    rm -f artifact.zip
-
-    rsync -avzh ${APP}-dev-linux.zip ${DEST}
-    mv -f ${APP}-dev-linux.zip ARCHIVE/${APP}_${version}_linux.zip
+    rsync -avzh ${fname} ${DEST}/${APP}_amd64.deb
+    mv -f ${fname} ARCHIVE/
 
     echo ""
 
@@ -105,11 +90,31 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     echo "artifact id: $artifactId"
     gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
     unzip artifact.zip
+    fname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
     rsync -avzh ${APP}_${version}_amd64.snap ${DEST}/${APP}_amd64.snap
     mv -f ${APP}_${version}_amd64.snap ARCHIVE/${APP}_${version}_amd64.snap
     ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}_amd64.snap"
+
+    echo ""
+
+    echo '***** UPLOAD LINUX ZIP'
+
+    ## gh run download ${bumpId} --name ${APP}-linux-zip
+
+    artifactId=$(gh api -H "Accept: application/vnd.github+json" /repos/${REP}/${APP}/actions/artifacts \
+		    --jq '.artifacts[] | select(.name | endswith("-linux-zip")) | .id' | head -n 1)
+    echo "artifact id: $artifactId"
+    gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
+    unzip artifact.zip
+    fname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    touch ${fname} # Timestamp with current date/time
+    rm -f artifact.zip
+
+    rsync -avzh ${APP}-dev-linux.zip ${DEST}
+    mv -f ${APP}-dev-linux.zip ARCHIVE/${APP}_${version}_linux.zip
 
     echo ""
 
@@ -122,11 +127,13 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     echo "artifact id: $artifactId"
     gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
     unzip artifact.zip
+    fname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
-    rsync -avzh ${APP}-dev-macos-unsigned.dmg ${DEST}
-    mv ${APP}-dev-macos-unsigned.dmg ARCHIVE/${APP}_${version}_macos_unsigned.dmg
-    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-dev-macos-unsigned.dmg"
+    rsync -avzh ${APP}-dev-macos.dmg ${DEST}/${APP}-dev-macos.dmg
+    mv ${APP}-dev-macos-unsigned.dmg ARCHIVE/${APP}_${version}_macos.dmg
+    ssh ${HOST} "cd ${FLDR}; chmod a+r ${APP}-dev-macos.dmg"
 
     echo ""
 
@@ -139,6 +146,8 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     echo "artifact id: $artifactId"
     gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
     unzip artifact.zip
+    fname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
     rsync -avzh ${APP}-dev-macos.zip ${DEST}
@@ -230,6 +239,8 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     echo "artifact id: $artifactId"
     gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
     unzip artifact.zip
+    fname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
     rsync -avzh ${APP}-dev-windows-inno.exe ${DEST}
@@ -246,6 +257,8 @@ if [[ "${status}" == "completed" && "${conclusion}" == "success" ]]; then
     echo "artifact id: $artifactId"
     gh api -H "Accept: application/vnd.github+json" repos/${REP}/${APP}/actions/artifacts/${artifactId}/zip > artifact.zip
     unzip artifact.zip
+    fname=$(unzip -l artifact.zip | awk 'NR==4 {print $4}')
+    touch ${fname} # Timestamp with current date/time
     rm -f artifact.zip
 
     rsync -avzh ${APP}-dev-windows.zip ${DEST}

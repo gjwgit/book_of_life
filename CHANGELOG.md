@@ -18,6 +18,7 @@ GNU/Linux
 Android
 [**apk**](https://solidcommunity.au/installers/bookoflife.apk) -
 macOS
+[**dmg**](https://solidcommunity.au/installers/bookoflife-dev-macos.dmg) -
 [**zip**](https://solidcommunity.au/installers/bookoflife-dev-macos.zip) -
 Windows
 [**zip**](https://solidcommunity.au/installers/bookoflife-dev-windows.zip) or

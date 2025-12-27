@@ -2,7 +2,7 @@
 #
 # Generic Makefile
 #
-# Time-stamp: <Friday 2025-12-26 21:16:00 +1100 Graham Williams>
+# Time-stamp: <Saturday 2025-12-27 08:59:50 +1100 Graham Williams>
 #
 # Copyright (c) Graham.Williams@togaware.com
 #
@@ -155,10 +155,10 @@ sinstall:
 # /usr/bin/rattle. This is working so add deb into the install and now
 # utilise that for the default install on my machine.
 
-inst:
-	(cd installers; make $@)
+upload:
+	(cd installers; make ginstall)
 
 debin:
 	wajig install installers/ARCHIVE/$(APP)_$(VER)_amd64.deb
 
-ginstall: apk appbundle prod inst debin
+ginstall: apk appbundle prod upload debin

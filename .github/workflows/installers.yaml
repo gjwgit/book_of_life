@@ -82,14 +82,6 @@ jobs:
 
     steps:
 
-      # Set the time zone so that the timestamp for the file matches
-      # my time zone.
-
-      - name: Set Time Zone
-        run: |
-          sudo timedatectl set-timezone Australia/Melbourne
-          date
-
       - name: Clone Repository
         uses: actions/checkout@v4
 
@@ -143,10 +135,6 @@ jobs:
       - name: Check the app version number
         run: echo ${VERSION}
 
-      - name: Temporary Check Date
-        run: |
-          date
-
       - name: Deb Package
         run: |
           mkdir -p build/${{env.APP}}_${VERSION}_amd64/DEBIAN
@@ -196,12 +184,6 @@ jobs:
           # Build the debian package.
 
           dpkg-deb --build build/${{env.APP}}_${VERSION}_amd64
-
-          ls -l build/*
-
-      - name: Temporary Check Date
-        run: |
-          date
 
       - name: Upload deb artifact
         uses: actions/upload-artifact@v4
@@ -344,11 +326,6 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v4
 
-      - name: Set Time Zone
-        run: |
-          sudo systemsetup -settimezone "Australia/Melbourne"
-          date
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -383,7 +360,7 @@ jobs:
           hdiutil create -volname "${{ env.APP }}" \
             -srcfolder dmg_temp \
             -ov -format UDZO \
-            "${{ env.APP }}-${{github.ref_name}}-macos-unsigned.dmg"
+            "${{ env.APP }}-${{github.ref_name}}-macos.dmg"
 
       - name: Note the DMG created
         run: |
@@ -393,7 +370,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP }}-macos-dmg
-          path: ${{ env.APP }}-${{github.ref_name}}-macos-unsigned.dmg
+          path: ${{ env.APP }}-${{github.ref_name}}-macos.dmg
 
       # Package as ZIP
 
@@ -1006,11 +983,6 @@ jobs:
     steps:
       - name: Clone Repository
         uses: actions/checkout@v4
-
-      - name: Set Time Zone
-        run: |
-          tzutil /s "AUS Eastern Standard Time"
-          Get-Date
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
