@@ -12,18 +12,19 @@ version_widget package.
 You can run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
 Download the latest version:
+Android
+[**aab**](https://solidcommunity.au/installers/bookoflife.apk) or
+[**apk**](https://solidcommunity.au/installers/bookoflife.apk) -
 GNU/Linux
 [**deb**](https://solidcommunity.au/installers/bookoflife_amd64.deb) or
 [**snap**](https://solidcommunity.au/installers/bookoflife_amd64.snap) or
 [**zip**](https://solidcommunity.au/installers/bookoflife-linux.zip) -
-Android
-[**apk**](https://solidcommunity.au/installers/bookoflife.apk) -
 macOS
-[**dmg**](https://solidcommunity.au/installers/bookoflife-macos.dmg) -
+[**dmg**](https://solidcommunity.au/installers/bookoflife-macos.dmg) or
 [**zip**](https://solidcommunity.au/installers/bookoflife-macos.zip) -
 Windows
-[**zip**](https://solidcommunity.au/installers/bookoflife-windows.zip) or
-[**inno**](https://solidcommunity.au/installers/bookoflife-windows-inno.exe).
+[**inno**](https://solidcommunity.au/installers/bookoflife-windows-inno.exe) or
+[**zip**](https://solidcommunity.au/installers/bookoflife-windows.zip).
 
 ## 0.1 First beta release of a solidui template
 
