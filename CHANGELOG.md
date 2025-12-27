@@ -12,6 +12,7 @@ version_widget package.
 You can run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
 Download the latest version:
+
 + Android
   [**aab**](https://solidcommunity.au/installers/bookoflife.apk) or
   [**apk**](https://solidcommunity.au/installers/bookoflife.apk);
