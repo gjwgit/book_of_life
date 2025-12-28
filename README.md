@@ -42,6 +42,9 @@ repository:
   [inno](https://solidcommunity.au/installers/bookoflife-windows-inno.exe) or
   [zip](https://solidcommunity.au/installers/bookoflife-windows.zip).
 
+Installation details are available for all platforms from
+[github](https://github.com/anusii/bookoflife/blob/dev/installers/README.md).
+
 Contributions are welcome. Visit
 [github](https://github.com/gjwgit/bookoflife) to submit an issue or,
 even better, fork the repository yourself, update the code, and submit
@@ -66,7 +69,7 @@ You can use this shell of an appliation as a template to get started
 with your own Solid Pod app.
 
 <!-- markdownlint-disable MD036 -->
-*Time-stamp: <Sunday 2025-12-28 09:47:14 +1100 Graham Williams>*
+*Time-stamp: <Sunday 2025-12-28 11:24:24 +1100 Graham Williams>*
 <!-- markdownlint-enable MD036 -->
 
 <!-- markdownlint-disable MD053 -->
