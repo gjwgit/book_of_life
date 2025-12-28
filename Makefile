@@ -2,7 +2,7 @@
 #
 # Generic Makefile
 #
-# Time-stamp: <Sunday 2025-12-28 05:19:40 +1100 Graham Williams>
+# Time-stamp: <Sunday 2025-12-28 12:21:06 +1100 Graham Williams>
 #
 # Copyright (c) Graham.Williams@togaware.com
 #
@@ -155,10 +155,26 @@ sinstall:
 # /usr/bin/rattle. This is working so add deb into the install and now
 # utilise that for the default install on my machine.
 
+.PHONY: upload
 upload:
 	(cd installers; make ginstall)
 
+.PHONY: debin
 debin:
 	wajig install installers/ARCHIVE/$(APP)_$(VER)_amd64.deb
 
+.PHONY: ginstall
 ginstall: upload debin apk appbundle prod
+
+.PHONY: ginfo
+ginfo:
+	@bumpId=$$(gh run list --limit 100 --json databaseId,displayTitle,workflowName \
+		| jq -r '.[] | select(.workflowName | startswith("Build Installers")) | select(.displayTitle | startswith("Bump version")) | .databaseId' \
+		| head -n 1); \
+	if [ -n "$$bumpId" ]; then \
+		echo "Bump ID: $$bumpId"; \
+		gh run view "$$bumpId"; \
+		gh run view "$$bumpId" --json status,conclusion; \
+	else \
+		echo "No bump ID found."; \
+	fi
