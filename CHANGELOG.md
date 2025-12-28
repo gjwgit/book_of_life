@@ -4,10 +4,10 @@ We identify here the high level changes for the BookOfLife app.
 
 Each version update includes a short user-oriented description.
 
-The next release is 0.1 following a 0.0.n series or updates.
+The next release is 1.1 following a 1.0.n series or updates.
 
 The `[version timestamp user]` string is utilised by the flutter
-version_widget package.
+[version_widget](https://pub.dev/packages/version_widget) package.
 
 You can run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
@@ -27,7 +27,11 @@ Download the latest version:
   [**inno**](https://solidcommunity.au/installers/bookoflife-windows-inno.exe) or
   [**zip**](https://solidcommunity.au/installers/bookoflife-windows.zip).
 
-## 0.1 First beta release of a solidui template
+## 1.1 Review
+
++ Release as demo app and template for app development [1.0.0 20251228 gjw]
+
+## 1.0 First beta release of a solidui template
 
 + Move deb build into github workflow [0.0.10 20251226 gjw]
 + Refine the standard template architecture [0.0.9 20251101 gjw]
