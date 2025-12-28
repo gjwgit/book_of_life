@@ -9,12 +9,13 @@ identical across all platforms so the experience across different
 platforms will be very similar.
 
 Visit the
-[CHANGELOG](https://github.com/anusii/bookoflife/blob/dev/CHANGELOG.md)
+[CHANGELOG](https://github.com/gjwgit/bookoflife/blob/dev/CHANGELOG.md)
 for the latest updates.
 
 Run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
 Download the latest version:
+
 + **Android**
   [aab](https://solidcommunity.au/installers/bookoflife.aab) or
   [apk](https://solidcommunity.au/installers/bookoflife.apk);
@@ -49,7 +50,7 @@ installing the app locally.
 ### Deb Install for Debian/Ubuntu
 
 Download
-(bookoflife_amd64.deb)[https://solidcommunity.au/installers/bookoflife_amd64.deb]
+[bookoflife_amd64.deb](https://solidcommunity.au/installers/bookoflife_amd64.deb)
 and install:
 
 ```bash
@@ -57,10 +58,10 @@ wget https://solidcommunity.au/installers/bookoflife_amd64.deb -O bookoflife_amd
 sudo dpkg --install bookoflife_amd64.deb
 ```
 
-### Snap Install
+### Linux Snap Install
 
 Download
-(bookoflife_amd64.snap)[https://solidcommunity.au/installers/bookoflife_amd64.snap]
+[bookoflife_amd64.snap](https://solidcommunity.au/installers/bookoflife_amd64.snap)
 and install:
 
 ```bash
@@ -68,7 +69,7 @@ wget https://solidcommunity.au/installers/bookoflife_amd64.snap -O bookoflife_am
 sudo snap install --dangerous bookoflife_amd64.snap
 ```
 
-### Zip Install
+### Linux Zip Install
 
 Download
 [bookoflife-linux.zip](https://solidcommunity.au/installers/bookoflife-linux.zip)
@@ -94,10 +95,10 @@ Then set up your local installation (only required once):
 
 ```bash
 ln -s ${HOME}/.local/share/bookoflife/bookoflife ${HOME}/.local/bin/
-wget https://raw.githubusercontent.com/anusii/bookoflife/dev/installers/app.desktop -O ${HOME}/.local/share/applications/bookoflife.desktop
+wget https://raw.githubusercontent.com/gjwgit/bookoflife/dev/installers/app.desktop -O ${HOME}/.local/share/applications/bookoflife.desktop
 sed -i "s/USER/$(whoami)/g" ${HOME}/.local/share/applications/bookoflife.desktop
 mkdir -p ${HOME}/.local/share/icons/hicolor/256x256/apps/
-wget https://github.com/anusii/bookoflife/raw/dev/installers/app.png -O ${HOME}/.local/share/icons/hicolor/256x256/apps/bookoflife.png
+wget https://github.com/gjwgit/bookoflife/raw/dev/installers/app.png -O ${HOME}/.local/share/icons/hicolor/256x256/apps/bookoflife.png
 ```
 
 To install for any user on the computer:
@@ -105,16 +106,16 @@ To install for any user on the computer:
 ```bash
 sudo unzip bookoflife-linux.zip -d /opt/bookoflife
 sudo ln -s /opt/bookoflife/bookoflife /usr/local/bin/
-wget https://raw.githubusercontent.com/anusii/bookoflife/dev/installers/app.desktop -O ${HOME}/usr/local/share/applications/bookoflife.desktop
-wget https://github.com/anusii/bookoflife/raw/dev/installers/app.png -O ${HOME}/use/local/share/icons/bookoflife.png
+wget https://raw.githubusercontent.com/gjwgit/bookoflife/dev/installers/app.desktop -O ${HOME}/usr/local/share/applications/bookoflife.desktop
+wget https://github.com/gjwgit/bookoflife/raw/dev/installers/app.png -O ${HOME}/use/local/share/icons/bookoflife.png
 ```
 
 Once installed you can run the app from the GNOME desktop through
 Alt-F2 and type `bookoflife` then Enter.
 
-## MacOS
+## macOS
 
-### Zip Install
+### macOS Zip Install
 
 Download
 [bookoflife-macos.zip](https://solidcommunity.au/installers/bookoflife-macos.zip).
@@ -134,7 +135,9 @@ Also, your Web browser will provide an option in its menus to install
 the app locally, which can add an icon to your home screen to start
 the web-based app directly.
 
-## Windows Installer
+## Windows
+
+### Windows Self Extracting Archive
 
 Download and run the self extracting archive
 [bookoflife-windows-inno.exe](https://solidcommunity.au/installers/bookoflife-windows-inno.exe)
