@@ -2,7 +2,7 @@
 #
 # Generic Makefile
 #
-# Time-stamp: <Sunday 2025-12-28 21:15:38 +1100 Graham Williams>
+# Time-stamp: <Friday 2026-01-02 19:19:07 +1100 Graham Williams>
 #
 # Copyright (c) Graham.Williams@togaware.com
 #
@@ -161,7 +161,11 @@ upload:
 
 .PHONY: debin
 debin:
+	@echo '******************** LOCAL INSTALL DEB'
 	wajig install installers/ARCHIVE/$(APP)_$(VER)_amd64.deb
+
+# Note that `debin` depends on the deb file being upladed to the ARCHIVE
+# and so the `upload` target is a prerequisite.
 
 .PHONY: ginstall
 ginstall: upload debin prod apk appbundle
