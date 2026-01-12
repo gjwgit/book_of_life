@@ -1,31 +1,30 @@
-# Book of Life
+# Book of Life Change Log
 
-We identify here the high level changes for the BookOfLife app.
-
-Each version update includes a short user-oriented description.
-
-The next release is 1.1 following a 1.0.n series or updates.
-
-The `[version timestamp user]` string is utilised by the flutter
+Recorded here are the high level changes for the app.  Each version
+update includes a short user-oriented description.  The next release
+is 1.1 following a 1.0.n series or updates.  The `[version timestamp
+user]` string is utilised by the flutter
 [version_widget](https://pub.dev/packages/version_widget) package.
 
-You can run the app online: [**web**](https://bookoflife.solidcommunity.au).
+Run the app online: [**web**](https://bookoflife.solidcommunity.au).
 
 Download the latest version:
-
-+ Android
+Android
   [**aab**](https://solidcommunity.au/installers/bookoflife.apk) or
   [**apk**](https://solidcommunity.au/installers/bookoflife.apk);
-+ GNU/Linux
+GNU/Linux
   [**deb**](https://solidcommunity.au/installers/bookoflife_amd64.deb) or
   [**snap**](https://solidcommunity.au/installers/bookoflife_amd64.snap) or
   [**zip**](https://solidcommunity.au/installers/bookoflife-linux.zip);
-+ macOS
+macOS
   [**dmg**](https://solidcommunity.au/installers/bookoflife-macos.dmg) or
   [**zip**](https://solidcommunity.au/installers/bookoflife-macos.zip);
-+ Windows
+Windows
   [**inno**](https://solidcommunity.au/installers/bookoflife-windows-inno.exe) or
   [**zip**](https://solidcommunity.au/installers/bookoflife-windows.zip).
+
+Coding documentation is
+[available](https://solidcommunity.au/docs/bookoflife).
 
 ## 1.1 Review
 
