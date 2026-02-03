@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Saturday 2025-10-25 17:05:20 +1100 Graham Williams>
+// Time-stamp: <Wednesday 2026-02-04 08:19:29 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -51,6 +51,7 @@ class App extends StatelessWidget {
       home: SolidLogin(
         image: const AssetImage('assets/images/app_image.png'),
         logo: const AssetImage('assets/images/app_icon.png'),
+        title: appTitle.replaceAll(' - ', '\n'),
         child: appScaffold,
       ),
     );
