@@ -1,6 +1,6 @@
 /// The primary [MaterialApp] widget.
 ///
-// Time-stamp: <Wednesday 2026-01-07 08:41:29 +1100 Graham Williams>
+// Time-stamp: <Wednesday 2026-02-18 08:17:54 +1100 Graham Williams>
 ///
 /// Copyright (C) 2025, Software Innovation Institute, ANU.
 ///
@@ -93,8 +93,7 @@ var appScaffold = SolidScaffold(
             **Files:** Tap here to browse the files on your POD.
 
             ''',
-      // TODO 20260107 gjw remove basePath: once we move to solidui 0.0.20+
-      child: SolidFile(basePath: ''),
+      child: SolidFile(currentPath: ''),
     ),
   ],
 
