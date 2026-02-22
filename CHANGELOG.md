@@ -1,29 +1,33 @@
 # Book of Life Change Log
 
-Recorded here are the high level changes for the app.  Each version
+Noted here are the high level changes for the app.  Each version
 update includes a short user-oriented description.  The next release
-is 1.1 following a 1.0.n series or updates.  The `[version timestamp
-user]` string is utilised by the flutter
+is 1.1 following incremental updates through the 1.0.n series.  The
+`[version timestamp user]` string is utilised by the flutter
 [version_widget](https://pub.dev/packages/version_widget) package.
 
-Run the app online: [**web**](https://bookoflife.solidcommunity.au).
+You can run the app in your browser from the
+[**web**](https://bookoflife.solidcommunity.au) or else download and
+locally install the latest version from the [Solid Community
+AU](https://solidcommunity.au) or directly
+for **Android** as
+  [aab](https://solidcommunity.au/installers/bookoflife.apk) or
+  [apk](https://solidcommunity.au/installers/bookoflife.apk);
+for **GNU/Linux** as
+  [deb](https://solidcommunity.au/installers/bookoflife_amd64.deb) or
+  [snap](https://solidcommunity.au/installers/bookoflife_amd64.snap) or
+  [zip](https://solidcommunity.au/installers/bookoflife-linux.zip);
+for **macOS** as
+  [dmg](https://solidcommunity.au/installers/bookoflife-macos.dmg) or
+  [zip](https://solidcommunity.au/installers/bookoflife-macos.zip);
+for **Windows** as
+  [inno](https://solidcommunity.au/installers/bookoflife-windows-inno.exe) or
+  [zip](https://solidcommunity.au/installers/bookoflife-windows.zip).
 
-Download the latest version:
-Android
-  [**aab**](https://solidcommunity.au/installers/bookoflife.apk) or
-  [**apk**](https://solidcommunity.au/installers/bookoflife.apk);
-GNU/Linux
-  [**deb**](https://solidcommunity.au/installers/bookoflife_amd64.deb) or
-  [**snap**](https://solidcommunity.au/installers/bookoflife_amd64.snap) or
-  [**zip**](https://solidcommunity.au/installers/bookoflife-linux.zip);
-macOS
-  [**dmg**](https://solidcommunity.au/installers/bookoflife-macos.dmg) or
-  [**zip**](https://solidcommunity.au/installers/bookoflife-macos.zip);
-Windows
-  [**inno**](https://solidcommunity.au/installers/bookoflife-windows-inno.exe) or
-  [**zip**](https://solidcommunity.au/installers/bookoflife-windows.zip).
-
-Coding documentation is
+Contributions are welcome. Visit
+[github](https://github.com/gjwgit/bookoflife) to submit an issue or, even
+better, fork the repository yourself, update the code, and submit a
+Pull Request. Coding documentation is
 [available](https://solidcommunity.au/docs/bookoflife).
 
 ## 1.1 Review
