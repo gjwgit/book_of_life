@@ -321,6 +321,12 @@ jobs:
         uses: canonical/action-build@v1
         id: build
 
+      - if: failure()
+        uses: action/upload-artifact@v4
+        with:
+          name: snapcraft-logs
+          path: ~/.local/state/snapcraft/log/*.log
+
       - name: Upload snap artifact
         if: hashFiles('snap/**') != ''
         uses: actions/upload-artifact@v4
