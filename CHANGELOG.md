@@ -8,8 +8,8 @@ timestamp user]` string is utilised by the flutter
 
 You can run the app in your browser from the
 [**web**](https://bookoflife.solidcommunity.au) or else download and
-locally install the latest version from the [Solid Community
-AU](https://solidcommunity.au) or directly: for **Android** as
+locally install the latest version from the [Solid
+Community](https://solidcommunity.au) or directly: for **Android** as
 [aab](https://solidcommunity.au/installers/bookoflife.apk) or
 [apk](https://solidcommunity.au/installers/bookoflife.apk); for
 **GNU/Linux** as
@@ -28,6 +28,10 @@ Contributions are welcome. Visit
 better, fork the repository yourself, update the code, and submit a
 Pull Request. Coding documentation is
 [available](https://solidcommunity.au/docs/bookoflife).
+
+We make this project available for free so if you appreciate the app
+then please show some ❤️ and tap on the star at
+[GitHub](https://github.com/gjwgit/bookoflife) to support our work.
 
 ## 1.1 Review
 
