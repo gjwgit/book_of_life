@@ -45,7 +45,7 @@ env:
   APP: bookoflife
   RELEASE: dev
   LINUX_PKGS: libsecret-1-dev
-  FLUTTER_VERSION: "3.41.1"
+  FLUTTER_VERSION: "3.38.5"
   MACOS_APP_RELEASE_UNSIGNED_PATH: build/macos/Build/Products/Release-unsigned
   MACOS_APP_RELEASE_STAGING_PATH: build/macos/Build/Products/Release-staging
   MACOS_APP_RELEASE_DEV_PATH: build/macos/Build/Products/Release-dev
@@ -272,21 +272,15 @@ jobs:
       - name: Clone Repository
         uses: actions/checkout@v4
 
-      - name: Install OS Dependencies
+      - name: Update system packages
         run: |
-          sudo apt-get update -y
+          sudo apt-get update
           sudo apt-get upgrade -y
 
       - name: Build snap
         if: hashFiles('snap/**') != ''
-        uses: canonical/action-build@v1
+        uses: snapcore/action-build@v1
         id: build
-
-      - if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: snapcraft-logs
-          path: ~/.local/state/snapcraft/log/*.log
 
       - name: Upload snap artifact
         if: hashFiles('snap/**') != ''
