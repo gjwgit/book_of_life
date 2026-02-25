@@ -1,7 +1,7 @@
 name: bookoflife
 description: "Book Of Life - Your Life's Data in Your Hands."
 publish_to: 'none'
-version: 1.0.0+18
+version: 0.0.2+19
 
 environment:
   sdk: ^3.10.0
