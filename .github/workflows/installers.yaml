@@ -39,16 +39,13 @@ on:
     branches:
       - dev
       - build
-      - jess/macos_installer
+      - installers
 
 env:
   APP: bookoflife
   RELEASE: dev
-  LINUX_PKGS: libsecret-1-dev
+  LINUX_PKGS: libsecret-1-dev libjsoncpp-dev
   FLUTTER_VERSION: "3.41.1"
-  MACOS_APP_RELEASE_UNSIGNED_PATH: build/macos/Build/Products/Release-unsigned
-  MACOS_APP_RELEASE_STAGING_PATH: build/macos/Build/Products/Release-staging
-  MACOS_APP_RELEASE_DEV_PATH: build/macos/Build/Products/Release-dev
 
 jobs:
 
@@ -310,11 +307,12 @@ jobs:
       #     #sudo cp /usr/lib/llvm-14/bin/lld /usr/lib/llvm-14/bin/ld.lld
       #     #ls -lr /usr/lib/llvm-14/bin
 
-      # - name: Install extra Linux packages
-      #   if: env.LINUX_PKGS != ''
-      #   run: |
-      #     printf '#%.0s' {1..72}; printf '\n${{env.LINUX_PKGS}}\n'
-      #     sudo apt-get install -y ${{env.LINUX_PKGS}}
+      - name: Upgrade and install extra Linux packages
+        if: env.LINUX_PKGS != ''
+        run: |
+          sudo apt-get update -y
+          sudo apt-get upgrade -y
+          sudo apt-get install -y ${{env.LINUX_PKGS}}
 
       - name: Build snap
         if: hashFiles('snap/**') != ''
