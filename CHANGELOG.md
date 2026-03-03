@@ -2,14 +2,13 @@
 
 Noted here are the high level changes for the app.  Each update
 includes a short user-oriented description.  The next release is 1.1
-following incremental updates through the 1.0.n series.  The `[version
-timestamp user]` string is utilised by the flutter
-[version_widget](https://pub.dev/packages/version_widget) package.
+following incremental updates through the 1.0.n series.
+
 
 You can run the app in your browser from the
 [**web**](https://bookoflife.solidcommunity.au) or else download and
-locally install the latest version from the [Solid
-Community](https://solidcommunity.au) or directly: for **Android** as
+install locally the latest version from the [Solid Community
+AU](https://solidcommunity.au) or directly: for **Android** as
 [aab](https://solidcommunity.au/installers/bookoflife.apk) or
 [apk](https://solidcommunity.au/installers/bookoflife.apk); for
 **GNU/Linux** as
@@ -24,10 +23,10 @@ Community](https://solidcommunity.au) or directly: for **Android** as
 or [zip](https://solidcommunity.au/installers/bookoflife-windows.zip).
 
 Contributions are welcome. Visit
-[github](https://github.com/gjwgit/bookoflife) to submit an issue or, even
-better, fork the repository yourself, update the code, and submit a
-Pull Request. Coding documentation is
-[available](https://solidcommunity.au/docs/bookoflife).
+[github](https://github.com/gjwgit/bookoflife) to submit an issue or,
+even better, fork the repository yourself, update the code, and submit
+a Pull Request. Coding documentation is available from [solid
+community au](https://solidcommunity.au/docs/bookoflife).
 
 We make this project available for free so if you appreciate the app
 then please show some ❤️ and tap on the star at
