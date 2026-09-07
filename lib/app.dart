@@ -25,6 +25,7 @@
 
 library;
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
 import 'package:solidui/solidui.dart';
@@ -52,6 +53,15 @@ class App extends StatelessWidget {
         image: const AssetImage('assets/images/app_image.png'),
         logo: const AssetImage('assets/images/app_icon.png'),
         title: appTitle.replaceAll(' - ', '\n'),
+        link: 'https://github.com/gjwgit/bookoflife',
+        clientId:
+            'https://anusii.github.io/bookoflife/client-profile.jsonld',
+        redirectUris: kIsWeb
+            ? ['${Uri.base.origin}/redirect.html']
+            : const [
+                'com.togaware.bookoflife://redirect',
+                'http://localhost:4400/redirect.html',
+              ],
         child: appScaffold,
       ),
     );
