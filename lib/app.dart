@@ -53,9 +53,9 @@ class App extends StatelessWidget {
         image: const AssetImage('assets/images/app_image.png'),
         logo: const AssetImage('assets/images/app_icon.png'),
         title: appTitle.replaceAll(' - ', '\n'),
-        link: 'https://github.com/tonypioneer/bookoflife',
+        link: 'https://github.com/gjwgit/bookoflife',
         clientId:
-            'https://tonypioneer.github.io/bookoflife/client-profile.jsonld',
+            'https://anusii.github.io/bookoflife/client-profile.jsonld',
         redirectUris: kIsWeb
             ? ['${Uri.base.origin}/redirect.html']
             : const [
