@@ -45,7 +45,7 @@ void main() async {
   //   null;
   // };
 
-  // Ensure Flutter bindings are initialized for async operations, in particular
+  // Ensure Flutter bindings are initialised for async operations, in particular
   // to set the Linux desktop window [title].
 
   WidgetsFlutterBinding.ensureInitialized();
